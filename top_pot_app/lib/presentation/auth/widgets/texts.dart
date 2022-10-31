@@ -44,17 +44,25 @@ class IntroText extends StatelessWidget {
 class LinkText extends StatelessWidget {
   final Color color;
   final String text;
-  const LinkText({Key? key, required this.color, required this.text})
+  final void Function() navigator;
+  const LinkText(
+      {Key? key,
+      required this.color,
+      required this.text,
+      required this.navigator})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Text(text,
-        style: GoogleFonts.montserrat(
-          textStyle: TextStyle(
-            color: color,
-            fontSize: 14,
-          ),
-        ));
+    return GestureDetector(
+      onTap: () {
+        navigator();
+      },
+      child: Text(text,
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                color: color, fontSize: 16, fontWeight: FontWeight.w400),
+          )),
+    );
   }
 }
