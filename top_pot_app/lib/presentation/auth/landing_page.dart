@@ -18,9 +18,23 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             ClipPath(
                 clipper: LandingWave(),
-                child: Container(
-                  color: const Color.fromRGBO(151, 77, 36, 1),
-                  height: 450,
+                child: Stack(
+                  children: [
+                    Container(
+                      color: const Color.fromRGBO(151, 77, 36, 1),
+                      height: 450,
+                    ),
+                    const Positioned(
+                        top: 90,
+                        left: 130,
+                        child: Image(
+                            image: AssetImage("assets/icons/coffee1.png"))),
+                    const Positioned(
+                        top: 230,
+                        left: 130,
+                        child: TopPotHeadline(
+                            color: Color.fromRGBO(99, 52, 32, 1)))
+                  ],
                 )),
             Align(
               alignment: Alignment.bottomCenter,
