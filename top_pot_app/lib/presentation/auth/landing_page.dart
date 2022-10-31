@@ -18,16 +18,17 @@ class _LandingPageState extends State<LandingPage> {
                 clipper: LandingWave(),
                 child: Container(
                   color: Color.fromRGBO(151, 77, 36, 1),
-                  height: 500,
+                  height: 450,
                 )),
             Align(
               alignment: Alignment.bottomCenter,
               child: Column(
-                children: [
-                  Text(
-                    "hey",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                children: const [
+                  TopPotHeadline(color: Colors.white),
+                  IntroText(
+                      color: Colors.white,
+                      text: "Why run for coffee when it can come to you?"),
+                  AuthButton1()
                 ],
               ),
             )
