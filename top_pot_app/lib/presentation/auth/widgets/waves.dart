@@ -7,19 +7,19 @@ class LoginWave extends CustomClipper<Path> {
     double height = size.height;
     double width = size.width;
     //p0
-    path.lineTo(0, height);
+    path.lineTo(0, height - 20);
     //controlling point, p1
-    var firstControlling = Offset(width / 5, height);
+    var firstControlling = Offset(width / 4, height);
     // end point, p2
-    var firstEnd = Offset(width / 2.25, height - 50.0);
+    var firstEnd = Offset(width / 2, height - 50.0);
 
     path.quadraticBezierTo(
         firstControlling.dx, firstControlling.dy, firstEnd.dx, firstEnd.dy);
     // p2 is the new starting point, you dont have to write it down
-    var secondControlling = Offset(width - (width / 3.24), height - 105);
+    var secondControlling = Offset(width - (width / 4.24), height - 105);
     // p4, new end
 
-    var secondEnd = Offset(width, height - 10);
+    var secondEnd = Offset(width, height - 60);
     path.quadraticBezierTo(
         secondControlling.dx, secondControlling.dy, secondEnd.dx, secondEnd.dy);
     path.lineTo(width, 0);

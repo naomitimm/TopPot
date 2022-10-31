@@ -35,7 +35,7 @@ class IntroText extends StatelessWidget {
         style: GoogleFonts.montserrat(
           textStyle: TextStyle(
             color: color,
-            fontSize: 14,
+            fontSize: 15,
           ),
         ));
   }
@@ -63,6 +63,115 @@ class LinkText extends StatelessWidget {
             textStyle: TextStyle(
                 color: color, fontSize: 16, fontWeight: FontWeight.w400),
           )),
+    );
+  }
+}
+
+class AuthFields extends StatelessWidget {
+  const AuthFields(
+      {Key? key,
+      required this.controller,
+      required this.hintText,
+      required this.placeholder})
+      : super(key: key);
+
+  final TextEditingController controller;
+  final String hintText;
+  final String placeholder;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(hintText,
+              style: GoogleFonts.montserrat(
+                textStyle:
+                    const TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+              )),
+        ),
+        TextFormField(
+          controller: controller,
+          decoration: InputDecoration(
+            focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderSide: BorderSide(
+                    width: 1, color: Color.fromRGBO(151, 77, 36, 1))),
+            hintText: placeholder,
+            border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20))),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class PasswordTextField extends StatefulWidget {
+  PasswordTextField(
+      {Key? key,
+      required this.controller,
+      required this.hintText,
+      this.isVisible = true})
+      : super(key: key);
+
+  final TextEditingController controller;
+  final String hintText;
+  bool isVisible;
+  @override
+  State<PasswordTextField> createState() => _PasswordTextFieldState();
+}
+
+class _PasswordTextFieldState extends State<PasswordTextField> {
+  @override
+  Widget build(BuildContext context) {
+    bool showPassword = false;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text("Password",
+              style: GoogleFonts.montserrat(
+                textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
+              )),
+        ),
+        TextFormField(
+          controller: widget.controller,
+          obscureText: !showPassword,
+          decoration: InputDecoration(
+            focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderSide: BorderSide(
+                    width: 1, color: Color.fromRGBO(151, 77, 36, 1))),
+            suffixIconColor: Colors.white,
+            suffixIcon: widget.isVisible
+                ? IconButton(
+                    onPressed: () {
+                      setState(() {
+                        showPassword = !showPassword;
+                      });
+                    },
+                    icon: FaIcon(
+                      showPassword
+                          ? FontAwesomeIcons.eye
+                          : FontAwesomeIcons.eyeSlash,
+                      size: 20,
+                    ),
+                  )
+                : null,
+            border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            )),
+          ),
+        ),
+      ],
     );
   }
 }
