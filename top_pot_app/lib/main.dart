@@ -33,8 +33,8 @@ class TopPotPages extends StatelessWidget {
           ),
       initialLocation: '/',
       routes: <GoRoute>[
-        // GoRoute(path: '/', builder: ((context, state) => const HostPage())),
-        GoRoute(path: '/', builder: ((context, state) => const LandingPage())),
+        GoRoute(path: '/', builder: ((context, state) => const HostPage())),
+        // GoRoute(path: '/', builder: ((context, state) => const LandingPage())),
         GoRoute(
             path: '/login_page',
             builder: ((context, state) => const LoginPage())),

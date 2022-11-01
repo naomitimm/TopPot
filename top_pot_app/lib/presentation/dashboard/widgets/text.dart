@@ -24,3 +24,19 @@ class DashboardHeadline extends StatelessWidget {
         ));
   }
 }
+
+class MiniHeadline extends StatelessWidget {
+  final String text;
+  final Color color;
+  const MiniHeadline({Key? key, required this.color, required this.text})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: GoogleFonts.montserrat(
+          textStyle: TextStyle(
+              color: color, fontSize: 20, fontWeight: FontWeight.w500),
+        ));
+  }
+}

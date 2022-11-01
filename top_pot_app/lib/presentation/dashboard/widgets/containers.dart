@@ -11,9 +11,9 @@ class CoffeeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Container(
-        width: 150,
+        width: 190,
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -30,7 +30,7 @@ class CoffeeCard extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                        width: 120,
+                        width: 150,
                         height: 145,
                         decoration: BoxDecoration(
                             image: DecorationImage(
@@ -69,7 +69,7 @@ class CoffeeCard extends StatelessWidget {
                 icon: const FaIcon(
                   FontAwesomeIcons.heart,
                   color: Color.fromRGBO(151, 77, 36, 1),
-                  size: 15,
+                  size: 18,
                 ),
               ),
             ),
@@ -89,7 +89,7 @@ class CatagoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Container(
         width: 140,
         decoration: BoxDecoration(

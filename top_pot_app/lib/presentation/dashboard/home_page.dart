@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   child: Align(
                     alignment: Alignment.center,
                     child: SizedBox(
-                      height: 250,
+                      height: 260,
                       width: double.infinity,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
@@ -58,7 +58,15 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: MiniHeadline(
+                color: Color.fromRGBO(151, 77, 36, 1), text: "Catagories"),
+          ),
+          const SizedBox(
+            height: 10,
           ),
           SizedBox(
             height: 80,
