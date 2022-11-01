@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
+        body: ListView(
       children: [
         ClipPath(
             clipper: LoginWave(),
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 25,
                 ),
-                AuthButton1(
+                ButtonWithArrow(
                     text: "Login",
                     color: Colors.white,
                     navigator: () {

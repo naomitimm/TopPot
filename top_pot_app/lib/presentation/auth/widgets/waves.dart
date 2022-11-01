@@ -33,7 +33,34 @@ class LoginWave extends CustomClipper<Path> {
   }
 }
 
-class LandingWave extends CustomClipper<Path> {
+class LandingPageWave extends StatelessWidget {
+  const LandingPageWave({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    return ClipPath(
+      clipper: LandingClipper(),
+      child: Stack(
+        children: [
+          Container(
+            color: const Color.fromRGBO(151, 77, 36, 1),
+            height: size.height / 1.6,
+            width: double.infinity,
+          ),
+          const Positioned(
+              top: 90,
+              left: 130,
+              child: Image(image: AssetImage("assets/icons/coffee1.png"))),
+          const Positioned(
+              top: 230, left: 130, child: TopPotHeadline(color: Colors.white))
+        ],
+      ),
+    );
+  }
+}
+
+class LandingClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
@@ -62,6 +89,6 @@ class LandingWave extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    throw UnimplementedError();
+    return true;
   }
 }

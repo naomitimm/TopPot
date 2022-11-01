@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:top_pot_app/presentation/auth/landing_page.dart';
-import 'package:top_pot_app/presentation/auth/login_page.dart';
 
 void main() {
   runApp(const TopPotApp());
