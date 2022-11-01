@@ -23,14 +23,24 @@ class ButtonWithArrow extends StatelessWidget {
         decoration: const BoxDecoration(
             color: Color.fromRGBO(151, 77, 36, 1),
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        child: Center(
-          child: Text(
-            text,
-            style: GoogleFonts.montserrat(
-              textStyle: TextStyle(
-                  color: color, fontSize: 15, fontWeight: FontWeight.w500),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              text,
+              style: GoogleFonts.montserrat(
+                textStyle: TextStyle(
+                    color: color, fontSize: 16, fontWeight: FontWeight.w500),
+              ),
             ),
-          ),
+            IconButton(
+                onPressed: () {},
+                icon: const FaIcon(
+                  FontAwesomeIcons.chevronRight,
+                  color: Colors.white,
+                  size: 20,
+                ))
+          ],
         ),
       ),
     );

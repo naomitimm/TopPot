@@ -1,6 +1,34 @@
 import 'package:top_pot_app/presentation/exports.dart';
 
-class LoginWave extends CustomClipper<Path> {
+class LoginPageWave extends StatelessWidget {
+  const LoginPageWave({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipPath(
+        clipper: LoginClipper(),
+        child: Stack(
+          children: [
+            Container(
+              color: const Color.fromRGBO(151, 77, 36, 1),
+              height: 180,
+            ),
+            Positioned(
+              top: 10,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: const FaIcon(
+                    FontAwesomeIcons.chevronLeft,
+                    color: Colors.white,
+                    size: 30,
+                  )),
+            )
+          ],
+        ));
+  }
+}
+
+class LoginClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
@@ -29,7 +57,7 @@ class LoginWave extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    throw UnimplementedError();
+    return true;
   }
 }
 

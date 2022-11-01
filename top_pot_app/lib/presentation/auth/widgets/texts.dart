@@ -109,6 +109,7 @@ class AuthFields extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class PasswordTextField extends StatefulWidget {
   PasswordTextField(
       {Key? key,
@@ -125,9 +126,9 @@ class PasswordTextField extends StatefulWidget {
 }
 
 class _PasswordTextFieldState extends State<PasswordTextField> {
+  bool showPassword = false;
   @override
   Widget build(BuildContext context) {
-    bool showPassword = false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -163,6 +164,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
                           : FontAwesomeIcons.eyeSlash,
                       size: 20,
                     ),
+                    color: const Color.fromRGBO(190, 122, 67, 1),
                   )
                 : null,
             border: const OutlineInputBorder(
