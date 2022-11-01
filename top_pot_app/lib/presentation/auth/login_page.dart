@@ -1,6 +1,4 @@
-import 'package:top_pot_app/presentation/auth/signup_page.dart';
 import 'package:top_pot_app/presentation/exports.dart';
-import 'package:top_pot_app/presentation/nav/home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,7 +15,13 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
         body: ListView(
       children: [
-        const LoginPageWave(),
+        AuthPageWave(
+          navigator: () {
+            Navigator.push(context, MaterialPageRoute(builder: ((context) {
+              return const LandingPage();
+            })));
+          },
+        ),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(

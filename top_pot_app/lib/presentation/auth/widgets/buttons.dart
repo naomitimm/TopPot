@@ -14,9 +14,7 @@ class ButtonWithArrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        navigator();
-      },
+      onTap: navigator,
       child: Container(
         height: 40,
         width: 180,
@@ -34,7 +32,7 @@ class ButtonWithArrow extends StatelessWidget {
               ),
             ),
             IconButton(
-                onPressed: () {},
+                onPressed: navigator,
                 icon: const FaIcon(
                   FontAwesomeIcons.chevronRight,
                   color: Colors.white,

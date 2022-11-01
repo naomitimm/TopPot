@@ -28,7 +28,7 @@ class _LandingPageState extends State<LandingPage> {
                   height: 15,
                 ),
                 ButtonWithArrow(
-                  text: "Create Account",
+                  text: "New Account",
                   color: Colors.white,
                   navigator: () {
                     Navigator.push(context,

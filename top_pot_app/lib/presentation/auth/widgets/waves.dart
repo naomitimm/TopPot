@@ -1,12 +1,13 @@
 import 'package:top_pot_app/presentation/exports.dart';
 
-class LoginPageWave extends StatelessWidget {
-  const LoginPageWave({Key? key}) : super(key: key);
+class AuthPageWave extends StatelessWidget {
+  const AuthPageWave({Key? key, required this.navigator}) : super(key: key);
+  final void Function() navigator;
 
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-        clipper: LoginClipper(),
+        clipper: AuthClipper(),
         child: Stack(
           children: [
             Container(
@@ -16,7 +17,7 @@ class LoginPageWave extends StatelessWidget {
             Positioned(
               top: 10,
               child: IconButton(
-                  onPressed: () {},
+                  onPressed: navigator,
                   icon: const FaIcon(
                     FontAwesomeIcons.chevronLeft,
                     color: Colors.white,
@@ -28,7 +29,7 @@ class LoginPageWave extends StatelessWidget {
   }
 }
 
-class LoginClipper extends CustomClipper<Path> {
+class AuthClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
