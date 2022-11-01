@@ -67,7 +67,7 @@ class CoffeeCard extends StatelessWidget {
               child: IconButton(
                 onPressed: () {},
                 icon: const FaIcon(
-                  FontAwesomeIcons.cartShopping,
+                  FontAwesomeIcons.heart,
                   color: Color.fromRGBO(151, 77, 36, 1),
                   size: 15,
                 ),
