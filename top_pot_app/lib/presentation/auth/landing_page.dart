@@ -1,5 +1,3 @@
-import 'package:top_pot_app/presentation/auth/login_page.dart';
-import 'package:top_pot_app/presentation/auth/signup_page.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class LandingPage extends StatefulWidget {
@@ -25,29 +23,23 @@ class _LandingPageState extends State<LandingPage> {
                     color: Colors.black,
                     text: "Why run for coffee when it can come to you?"),
                 const SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 ButtonWithArrow(
                   text: "New Account",
                   color: Colors.white,
                   navigator: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return const SignupPage();
-                    })));
+                    context.go('/signup_page');
                   },
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 10,
                 ),
                 LinkText(
                   color: const Color.fromRGBO(151, 77, 36, 1),
                   text: "Login",
                   navigator: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return const LoginPage();
-                    })));
+                    context.go('/login_page');
                   },
                 ),
               ],

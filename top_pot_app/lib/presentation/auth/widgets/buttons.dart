@@ -17,7 +17,7 @@ class ButtonWithArrow extends StatelessWidget {
       onTap: navigator,
       child: Container(
         height: 40,
-        width: 180,
+        width: 190,
         decoration: const BoxDecoration(
             color: Color.fromRGBO(151, 77, 36, 1),
             borderRadius: BorderRadius.all(Radius.circular(10))),

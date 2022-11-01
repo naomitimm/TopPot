@@ -18,9 +18,7 @@ class _SignupPageState extends State<SignupPage> {
       children: [
         AuthPageWave(
           navigator: () {
-            Navigator.push(context, MaterialPageRoute(builder: ((context) {
-              return const LandingPage();
-            })));
+            context.go('/');
           },
         ),
         Padding(
@@ -28,7 +26,7 @@ class _SignupPageState extends State<SignupPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Welcome",
+              Text("Create new account",
                   style: GoogleFonts.montserrat(
                     textStyle: const TextStyle(
                         color: Color.fromRGBO(190, 122, 67, 1),
@@ -60,10 +58,7 @@ class _SignupPageState extends State<SignupPage> {
                   text: "Signup",
                   color: Colors.white,
                   navigator: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return const Home();
-                    })));
+                    context.go('/host_page');
                   }),
               const SizedBox(
                 height: 20,
@@ -81,10 +76,7 @@ class _SignupPageState extends State<SignupPage> {
                       color: const Color.fromRGBO(151, 77, 36, 1),
                       text: "Login",
                       navigator: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: ((context) {
-                          return const SignupPage();
-                        })));
+                        context.go('/login_page');
                       })
                 ],
               )

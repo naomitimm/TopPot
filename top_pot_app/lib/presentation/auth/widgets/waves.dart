@@ -6,26 +6,34 @@ class AuthPageWave extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-        clipper: AuthClipper(),
-        child: Stack(
-          children: [
-            Container(
-              color: const Color.fromRGBO(151, 77, 36, 1),
-              height: 180,
-            ),
-            Positioned(
-              top: 10,
-              child: IconButton(
-                  onPressed: navigator,
-                  icon: const FaIcon(
-                    FontAwesomeIcons.chevronLeft,
-                    color: Colors.white,
-                    size: 30,
-                  )),
-            )
-          ],
-        ));
+    return Stack(
+      children: [
+        ClipPath(
+          clipper: AuthClipper(),
+          child: Container(
+            color: const Color.fromRGBO(190, 122, 67, 1),
+            height: 180,
+          ),
+        ),
+        ClipPath(
+          clipper: AuthClipper(),
+          child: Container(
+            color: const Color.fromRGBO(151, 77, 36, 1),
+            height: 170,
+          ),
+        ),
+        Positioned(
+          top: 10,
+          child: IconButton(
+              onPressed: navigator,
+              icon: const FaIcon(
+                FontAwesomeIcons.chevronLeft,
+                color: Colors.white,
+                size: 30,
+              )),
+        )
+      ],
+    );
   }
 }
 
