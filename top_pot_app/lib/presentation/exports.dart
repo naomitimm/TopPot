@@ -10,4 +10,7 @@ export 'package:top_pot_app/presentation/auth/widgets/texts.dart';
 export 'package:top_pot_app/presentation/auth/login_page.dart';
 export 'package:top_pot_app/presentation/auth/landing_page.dart';
 export 'package:top_pot_app/presentation/auth/signup_page.dart';
-export 'package:top_pot_app/presentation/nav/host_page.dart';
+export 'package:top_pot_app/presentation/dashboard/host_page.dart';
+export 'package:top_pot_app/presentation/dashboard/checkout_page.dart';
+export 'package:top_pot_app/presentation/dashboard/home_page.dart';
+export 'package:top_pot_app/presentation/dashboard/profile_page.dart';
