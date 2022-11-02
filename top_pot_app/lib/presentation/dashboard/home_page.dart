@@ -45,9 +45,9 @@ class _HomePageState extends State<HomePage> {
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: ((context, index) {
-                            return const CoffeeCard(
-                              image: "assets/coffee/coffee1.jpg",
-                              name: "Cappuchino",
+                            return CoffeeCard(
+                              image: "assets/coffee/latte.jpg",
+                              name: "Latte",
                               price: "4.50",
                             );
                           })),
@@ -60,34 +60,33 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MiniHeadline(
-                    color: Color.fromRGBO(151, 77, 36, 1), text: "Options"),
-                const SizedBox(
-                  height: 5,
-                ),
-                SizedBox(
-                  height: 60,
-                  width: double.infinity,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      OptionCard(
-                          image: "assets/coffee/no-sugar.png", name: "Decaf"),
-                      OptionCard(
-                          image: "assets/coffee/dairy-free.png", name: "Decaf"),
-                      OptionCard(
-                          image: "assets/coffee/coffee.png", name: "Decaf"),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          )
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     children: [
+          //       MiniHeadline(color: Colors.black, text: "Options"),
+          //       const SizedBox(
+          //         height: 5,
+          //       ),
+          //       SizedBox(
+          //         height: 70,
+          //         width: double.infinity,
+          //         child: ListView(
+          //           scrollDirection: Axis.horizontal,
+          //           children: [
+          //             OptionCard(
+          //                 image: "assets/coffee/no-sugar.png", name: "Decaf"),
+          //             OptionCard(
+          //                 image: "assets/coffee/dairy-free.png", name: "Decaf"),
+          //             OptionCard(
+          //                 image: "assets/coffee/coffee.png", name: "Decaf"),
+          //           ],
+          //         ),
+          //       )
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );

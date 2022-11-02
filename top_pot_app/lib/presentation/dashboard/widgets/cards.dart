@@ -1,13 +1,22 @@
 import 'package:top_pot_app/presentation/exports.dart';
 
-class CoffeeCard extends StatelessWidget {
+class CoffeeCard extends StatefulWidget {
   final String image;
   final String name;
   final String price;
-  const CoffeeCard(
-      {Key? key, required this.image, required this.name, required this.price})
-      : super(key: key);
+  CoffeeCard({
+    Key? key,
+    required this.image,
+    required this.name,
+    required this.price,
+  }) : super(key: key);
 
+  @override
+  State<CoffeeCard> createState() => _CoffeeCardState();
+}
+
+class _CoffeeCardState extends State<CoffeeCard> {
+  bool isFav = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,7 +43,8 @@ class CoffeeCard extends StatelessWidget {
                         height: 145,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage(image), fit: BoxFit.cover),
+                                image: AssetImage(widget.image),
+                                fit: BoxFit.cover),
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)))),
                   ),
@@ -43,7 +53,7 @@ class CoffeeCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(name,
+                    Text(widget.name,
                         style: GoogleFonts.montserrat(
                           textStyle: const TextStyle(
                               color: Colors.black,
@@ -51,7 +61,7 @@ class CoffeeCard extends StatelessWidget {
                               fontWeight: FontWeight.w700),
                         )),
                     const SizedBox(height: 5),
-                    Text("\$$price",
+                    Text("\$${widget.price}",
                         style: GoogleFonts.montserrat(
                           textStyle: const TextStyle(
                               color: Color.fromRGBO(190, 122, 67, 1),
@@ -65,13 +75,22 @@ class CoffeeCard extends StatelessWidget {
             Align(
               alignment: Alignment.topRight,
               child: IconButton(
-                onPressed: () {},
-                icon: const FaIcon(
-                  FontAwesomeIcons.heart,
-                  color: Color.fromRGBO(151, 77, 36, 1),
-                  size: 18,
-                ),
-              ),
+                  onPressed: () {
+                    setState(() {
+                      isFav = !isFav;
+                    });
+                  },
+                  icon: isFav
+                      ? const Icon(
+                          Icons.favorite,
+                          color: Color.fromRGBO(151, 77, 36, 1),
+                          size: 25,
+                        )
+                      : const Icon(
+                          Icons.favorite_border,
+                          color: Color.fromRGBO(151, 77, 36, 1),
+                          size: 25,
+                        )),
             ),
           ],
         ),
