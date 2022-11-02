@@ -43,17 +43,17 @@ class _HostPageState extends State<HostPage> {
               ),
               label: "Home"),
           BottomNavigationBarItem(
-              activeIcon: FaIcon(
-                FontAwesomeIcons.cartShopping,
+              activeIcon: Icon(
+                Icons.favorite,
                 color: Color.fromRGBO(151, 77, 36, 1),
-                size: 25,
+                size: 28,
               ),
-              icon: FaIcon(
-                FontAwesomeIcons.cartShopping,
+              icon: Icon(
+                Icons.favorite,
                 color: Colors.black,
-                size: 25,
+                size: 28,
               ),
-              label: "Cart"),
+              label: "Favorite"),
           BottomNavigationBarItem(
               activeIcon: FaIcon(
                 FontAwesomeIcons.userLarge,
