@@ -40,3 +40,19 @@ class MiniHeadline extends StatelessWidget {
         ));
   }
 }
+
+class FavoritesTitle extends StatelessWidget {
+  final String text;
+  final Color color;
+  const FavoritesTitle({Key? key, required this.color, required this.text})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: GoogleFonts.montserrat(
+          textStyle: TextStyle(
+              color: color, fontSize: 15, fontWeight: FontWeight.w500),
+        ));
+  }
+}

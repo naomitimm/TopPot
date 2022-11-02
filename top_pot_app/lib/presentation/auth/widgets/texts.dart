@@ -11,7 +11,10 @@ List colors = const [
 
 class TopPotHeadline extends StatelessWidget {
   final Color color;
-  const TopPotHeadline({Key? key, required this.color}) : super(key: key);
+  const TopPotHeadline({
+    Key? key,
+    required this.color,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

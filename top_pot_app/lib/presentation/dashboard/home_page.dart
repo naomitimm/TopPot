@@ -29,11 +29,11 @@ class _HomePageState extends State<HomePage> {
                   height: height / 2.2,
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                  child: DashboardHeadline(color: Colors.white, text: "Home"),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                  child: TopPotHeadline(color: Colors.white),
                 ),
                 const Padding(
-                    padding: EdgeInsets.only(top: 80, left: 15, right: 15),
+                    padding: EdgeInsets.only(top: 85, left: 15, right: 15),
                     child: MySearchBar()),
                 Padding(
                   padding: const EdgeInsets.only(top: 110),

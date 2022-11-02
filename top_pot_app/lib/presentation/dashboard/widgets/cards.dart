@@ -1,3 +1,4 @@
+import 'package:top_pot_app/presentation/dashboard/widgets/text.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class CoffeeCard extends StatefulWidget {
@@ -138,6 +139,95 @@ class OptionCard extends StatelessWidget {
       //         )),
       //   ),
       // ),
+    );
+  }
+}
+
+class FavoriteCard extends StatelessWidget {
+  final String image;
+  final String price;
+  final String name;
+
+  const FavoriteCard(
+      {Key? key, required this.image, required this.price, required this.name})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15),
+      child: Container(
+        width: double.infinity,
+        height: 120,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          color: Color.fromRGBO(190, 122, 67, 1),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              width: 100,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10)),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(image),
+                  )),
+            ),
+            FavoritesTitle(color: Colors.black, text: name),
+            const ItemCounter(),
+            IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.x,
+                color: Colors.black,
+                size: 20,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ItemCounter extends StatefulWidget {
+  const ItemCounter({Key? key}) : super(key: key);
+
+  @override
+  State<ItemCounter> createState() => _ItemCounterState();
+}
+
+class _ItemCounterState extends State<ItemCounter> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        IconButton(
+          onPressed: () {},
+          icon: const FaIcon(
+            FontAwesomeIcons.minus,
+            color: Colors.white,
+            size: 16,
+          ),
+        ),
+        const Text(
+          "1",
+          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const FaIcon(
+            FontAwesomeIcons.plus,
+            color: Colors.white,
+            size: 16,
+          ),
+        )
+      ],
     );
   }
 }
