@@ -1,4 +1,4 @@
-import 'package:top_pot_app/presentation/dashboard/widgets/containers.dart';
+import 'package:top_pot_app/presentation/dashboard/widgets/cards.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/search_bar.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/text.dart';
 import 'package:top_pot_app/presentation/exports.dart';
@@ -60,29 +60,34 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 15,
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: MiniHeadline(
-                color: Color.fromRGBO(151, 77, 36, 1), text: "Catagories"),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 80,
-            width: double.infinity,
-            child: ListView(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CatagoryCard(
-                    image: "assets/coffee/decaff.png", name: "Decaf"),
-                const CatagoryCard(
-                    image: "assets/coffee/milk.png", name: "Dairy free"),
-                const CatagoryCard(
-                    image: "assets/coffee/sugar.png", name: "Sugar free"),
+                MiniHeadline(
+                    color: Color.fromRGBO(151, 77, 36, 1), text: "Options"),
+                const SizedBox(
+                  height: 5,
+                ),
+                SizedBox(
+                  height: 60,
+                  width: double.infinity,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      OptionCard(
+                          image: "assets/coffee/no-sugar.png", name: "Decaf"),
+                      OptionCard(
+                          image: "assets/coffee/dairy-free.png", name: "Decaf"),
+                      OptionCard(
+                          image: "assets/coffee/coffee.png", name: "Decaf"),
+                    ],
+                  ),
+                )
               ],
-              scrollDirection: Axis.horizontal,
             ),
-          ),
+          )
         ],
       ),
     );

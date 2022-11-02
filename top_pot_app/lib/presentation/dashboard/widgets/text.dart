@@ -36,7 +36,7 @@ class MiniHeadline extends StatelessWidget {
     return Text(text,
         style: GoogleFonts.montserrat(
           textStyle: TextStyle(
-              color: color, fontSize: 20, fontWeight: FontWeight.w500),
+              color: color, fontSize: 20, fontWeight: FontWeight.w600),
         ));
   }
 }
