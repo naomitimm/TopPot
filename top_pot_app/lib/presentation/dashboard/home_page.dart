@@ -1,3 +1,4 @@
+import 'package:top_pot_app/domain/models/coffee.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/cards.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/search_bar.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/text.dart';
@@ -43,12 +44,12 @@ class _HomePageState extends State<HomePage> {
                       width: double.infinity,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 5,
+                          itemCount: Coffee.coffees.length,
                           itemBuilder: ((context, index) {
                             return CoffeeCard(
-                              image: "assets/coffee/latte.jpg",
-                              name: "Latte",
-                              price: "4.50",
+                              image: Coffee.coffees[index].image,
+                              name: Coffee.coffees[index].name,
+                              price: Coffee.coffees[index].price,
                             );
                           })),
                     ),

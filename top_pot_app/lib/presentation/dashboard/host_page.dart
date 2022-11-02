@@ -10,7 +10,7 @@ class HostPage extends StatefulWidget {
 }
 
 class _HostPageState extends State<HostPage> {
-  int currentPosition = 0;
+  int currentPosition = 1;
   final pages = [const HomePage(), const CheckoutPage(), const ProfilePage()];
 
   @override
