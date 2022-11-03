@@ -52,28 +52,44 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(
-                    FontAwesomeIcons.plus,
-                    color: Color.fromRGBO(151, 77, 36, 1),
-                    size: 16,
-                  ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const FaIcon(
+                  FontAwesomeIcons.plus,
+                  color: Color.fromRGBO(151, 77, 36, 1),
+                  size: 16,
                 ),
-                Text("Add any known allergies",
-                    style: GoogleFonts.montserrat(
-                      textStyle: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                      ),
-                    ))
-              ],
-            ),
+              ),
+              Text("Add any known allergies",
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  )),
+            ],
+          ),
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const FaIcon(
+                  FontAwesomeIcons.calendar,
+                  color: Color.fromRGBO(151, 77, 36, 1),
+                  size: 16,
+                ),
+              ),
+              Text("Joined on October 6 2022",
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ))
+            ],
           )
         ],
       ),
