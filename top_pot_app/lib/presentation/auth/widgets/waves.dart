@@ -87,8 +87,8 @@ class LandingPageWave extends StatelessWidget {
           ),
           const Positioned(
               top: 90,
-              left: 130,
-              child: Image(image: AssetImage("assets/icons/coffee1.png"))),
+              left: 115,
+              child: Image(image: AssetImage("assets/icons/coffee2.png"))),
           const Positioned(
               top: 230, left: 130, child: TopPotHeadline(color: Colors.white))
         ],
