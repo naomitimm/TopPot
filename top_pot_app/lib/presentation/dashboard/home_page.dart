@@ -14,11 +14,12 @@ class _HomePageState extends State<HomePage> {
     final size = MediaQuery.of(context).size;
     final height = size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           Container(
             color: Colors.white,
-            height: height / 1.5,
+            height: height / 1.6,
             child: Stack(
               children: [
                 Container(
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(top: 85, left: 15, right: 15),
                     child: MySearchBar()),
                 Padding(
-                  padding: const EdgeInsets.only(top: 110),
+                  padding: const EdgeInsets.only(top: 140),
                   child: Align(
                     alignment: Alignment.center,
                     child: SizedBox(
@@ -58,33 +59,23 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 15,
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          //   child: Column(
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //     children: [
-          //       MiniHeadline(color: Colors.black, text: "Options"),
-          //       const SizedBox(
-          //         height: 5,
-          //       ),
-          //       SizedBox(
-          //         height: 70,
-          //         width: double.infinity,
-          //         child: ListView(
-          //           scrollDirection: Axis.horizontal,
-          //           children: [
-          //             OptionCard(
-          //                 image: "assets/coffee/no-sugar.png", name: "Decaf"),
-          //             OptionCard(
-          //                 image: "assets/coffee/dairy-free.png", name: "Decaf"),
-          //             OptionCard(
-          //                 image: "assets/coffee/coffee.png", name: "Decaf"),
-          //           ],
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // )
+          Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              child: SizedBox(
+                height: 120,
+                width: double.infinity,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    HomeOptionCard(
+                        image: "assets/coffee/sugar-free.png", name: "Decaf"),
+                    HomeOptionCard(
+                        image: "assets/coffee/dairy-free.png", name: "Decaf"),
+                    HomeOptionCard(
+                        image: "assets/coffee/decaff.png", name: "Decaf"),
+                  ],
+                ),
+              )),
         ],
       ),
     );

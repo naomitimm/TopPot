@@ -99,10 +99,10 @@ class _CoffeeCardState extends State<CoffeeCard> {
   }
 }
 
-class OptionCard extends StatelessWidget {
+class HomeOptionCard extends StatelessWidget {
   final String image;
   final String name;
-  const OptionCard({Key? key, required this.image, required this.name})
+  const HomeOptionCard({Key? key, required this.image, required this.name})
       : super(key: key);
 
   @override
@@ -112,7 +112,7 @@ class OptionCard extends StatelessWidget {
       child: Container(
         width: 80,
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: const Color.fromRGBO(151, 77, 36, 1),
             border: Border.all(
               color: const Color.fromRGBO(151, 77, 36, 1).withOpacity(0.1),
             ),
