@@ -1,8 +1,13 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:top_pot_app/application/auth/bloc/signup_bloc.dart';
+import 'package:top_pot_app/infrustructure/auth_repository.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 void main() {
   runApp(const TopPotApp());
 }
+
+final authRepository = AuthRepository();
 
 class TopPotApp extends StatelessWidget {
   const TopPotApp({Key? key}) : super(key: key);
@@ -10,8 +15,18 @@ class TopPotApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: TopPotPages(),
-    );
+        home: MultiRepositoryProvider(
+      providers: [RepositoryProvider(create: (context) => AuthRepository())],
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => SignupBloc(authRepository: authRepository),
+            child: const SignupPage(),
+          ),
+        ],
+        child: TopPotPages(),
+      ),
+    ));
   }
 }
 
