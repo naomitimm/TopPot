@@ -59,23 +59,23 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 15,
           ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: MiniHeadline(color: Colors.black, text: "Options"),
+          ),
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              child: SizedBox(
-                height: 120,
-                width: double.infinity,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    HomeOptionCard(
-                        image: "assets/coffee/sugar-free.png", name: "Decaf"),
-                    HomeOptionCard(
-                        image: "assets/coffee/dairy-free.png", name: "Decaf"),
-                    HomeOptionCard(
-                        image: "assets/coffee/decaff.png", name: "Decaf"),
-                  ],
-                ),
-              )),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: Row(
+              children: const [
+                HomeOptionCard(
+                    image: "assets/coffee/sugar-free.png", name: "Sugar free"),
+                HomeOptionCard(
+                    image: "assets/coffee/dairy-free.png", name: "Dairy free"),
+                HomeOptionCard(
+                    image: "assets/coffee/decaff.png", name: "Decaff"),
+              ],
+            ),
+          )
         ],
       ),
     );

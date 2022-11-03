@@ -110,34 +110,38 @@ class HomeOptionCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: Container(
-        width: 80,
-        decoration: BoxDecoration(
-            color: const Color.fromRGBO(151, 77, 36, 1),
-            border: Border.all(
-              color: const Color.fromRGBO(151, 77, 36, 1).withOpacity(0.1),
+        width: 90,
+        height: 100,
+        decoration: const BoxDecoration(
+            color: Color.fromRGBO(190, 122, 67, 1),
+            borderRadius: BorderRadius.all(Radius.circular(10))),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: Container(
+                  width: 70,
+                  height: 85,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(image), fit: BoxFit.scaleDown),
+                  )),
             ),
-            borderRadius: const BorderRadius.all(Radius.circular(10))),
-        child: Container(
-            width: 60,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(image), fit: BoxFit.scaleDown),
-            )),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 3),
+              child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Text(name,
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                        ),
+                      ))),
+            ),
+          ],
+        ),
       ),
-
-      // Padding(
-      //   padding: const EdgeInsets.only(bottom: 10, right: 5),
-      //   child: Align(
-      //     alignment: Alignment.bottomRight,
-      //     child: Text(name,
-      //         style: GoogleFonts.montserrat(
-      //           textStyle: const TextStyle(
-      //               color: Colors.black,
-      //               fontSize: 14,
-      //               fontWeight: FontWeight.w700),
-      //         )),
-      //   ),
-      // ),
     );
   }
 }
