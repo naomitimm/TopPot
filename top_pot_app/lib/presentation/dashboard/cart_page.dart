@@ -48,7 +48,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
             const Align(
               alignment: Alignment.bottomCenter,
-              child: CartSubmitButton(),
+              child: CartSubmitContainer(),
             )
           ],
         ),
