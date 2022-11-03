@@ -156,65 +156,57 @@ class CartCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15),
-      child: Container(
-        width: double.infinity,
-        height: 120,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black.withOpacity(0.5), width: 0.2),
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          color: Colors.white,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              width: 100,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      bottomLeft: Radius.circular(10)),
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(image),
-                  )),
+      child: Stack(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 120,
+            decoration: BoxDecoration(
+              border:
+                  Border.all(color: Colors.black.withOpacity(0.5), width: 0.2),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              color: Colors.white,
             ),
-            FavoritesTitle(color: Colors.black, text: name),
-            const ItemCounter(),
-            IconButton(
-              onPressed: () {},
-              icon: const FaIcon(
-                FontAwesomeIcons.x,
-                color: Colors.black,
-                size: 15,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 100,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10)),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(image),
+                      )),
+                ),
+                FavoritesTitle(color: Colors.black, text: name),
+                const ItemCounter(),
+                IconButton(
+                  onPressed: () {},
+                  icon: const FaIcon(
+                    FontAwesomeIcons.x,
+                    color: Colors.black,
+                    size: 15,
+                  ),
+                ),
+              ],
             ),
-            // Column(
-            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   children: [
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       children: [
-
-            //       ],
-            //     ),
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       children: [
-            //         Text("\$$price",
-            //             style: GoogleFonts.montserrat(
-            //               textStyle: const TextStyle(
-            //                   color: Colors.black,
-            //                   fontSize: 15,
-            //                   fontWeight: FontWeight.w500),
-            //             )),
-
-            //       ],
-            //     )
-            //   ],
-            // )
-          ],
-        ),
+          ),
+          Positioned(
+            top: 90,
+            left: 110,
+            child: Text("\$$price",
+                style: GoogleFonts.montserrat(
+                  textStyle: const TextStyle(
+                      color: Color.fromRGBO(190, 122, 67, 1),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                )),
+          ),
+        ],
       ),
     );
   }
