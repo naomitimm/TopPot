@@ -6,8 +6,7 @@ export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:go_router/go_router.dart';
 
 // pages
-export 'package:top_pot_app/presentation/auth/widgets/buttons.dart';
-export 'package:top_pot_app/presentation/auth/widgets/texts.dart';
+
 export 'package:top_pot_app/presentation/auth/login_page.dart';
 export 'package:top_pot_app/presentation/auth/landing_page.dart';
 export 'package:top_pot_app/presentation/auth/signup_page.dart';
@@ -15,3 +14,13 @@ export 'package:top_pot_app/presentation/dashboard/host_page.dart';
 export 'package:top_pot_app/presentation/dashboard/cart_page.dart';
 export 'package:top_pot_app/presentation/dashboard/home_page.dart';
 export 'package:top_pot_app/presentation/dashboard/profile_page.dart';
+
+// widgets
+export 'package:top_pot_app/presentation/auth/widgets/buttons.dart';
+export 'package:top_pot_app/presentation/auth/widgets/texts.dart';
+export 'package:top_pot_app/presentation/dashboard/widgets/buttons.dart';
+export 'package:top_pot_app/presentation/dashboard/widgets/cards.dart';
+export 'package:top_pot_app/presentation/dashboard/widgets/dash_text.dart';
+
+//models
+export 'package:top_pot_app/domain/models/coffee.dart';

@@ -1,4 +1,3 @@
-import 'package:top_pot_app/presentation/dashboard/widgets/text.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class CoffeeCard extends StatefulWidget {

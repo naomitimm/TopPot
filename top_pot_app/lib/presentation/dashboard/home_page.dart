@@ -1,7 +1,4 @@
-import 'package:top_pot_app/domain/models/coffee.dart';
-import 'package:top_pot_app/presentation/dashboard/widgets/cards.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/search_bar.dart';
-import 'package:top_pot_app/presentation/dashboard/widgets/text.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class HomePage extends StatefulWidget {

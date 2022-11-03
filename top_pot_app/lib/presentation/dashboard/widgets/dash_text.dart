@@ -1,13 +1,13 @@
 import 'package:top_pot_app/presentation/exports.dart';
 
-List colors = const [
-  Color.fromRGBO(151, 77, 36, 1),
-  Color.fromRGBO(27, 27, 27, 1),
-  Color.fromRGBO(190, 200, 204, 1),
-  Color.fromRGBO(99, 52, 32, 1),
-  Color.fromRGBO(219, 207, 194, 1),
-  Color.fromRGBO(190, 122, 67, 1),
-];
+// List colors = const [
+//   Color.fromRGBO(151, 77, 36, 1),
+//   Color.fromRGBO(27, 27, 27, 1),
+//   Color.fromRGBO(190, 200, 204, 1),
+//   Color.fromRGBO(99, 52, 32, 1),
+//   Color.fromRGBO(219, 207, 194, 1),
+//   Color.fromRGBO(190, 122, 67, 1),
+// ];
 
 class DashboardHeadline extends StatelessWidget {
   final String text;
