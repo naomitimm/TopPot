@@ -22,7 +22,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               height: height / 2.9,
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 20),
               child: DashboardHeadline(color: Colors.white, text: "My cart"),
             ),
             const Padding(

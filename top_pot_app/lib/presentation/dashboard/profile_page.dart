@@ -25,9 +25,23 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: const Color.fromRGBO(151, 77, 36, 1),
                   height: height / 3,
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  child: DashboardHeadline(color: Colors.white, text: "@jon_d"),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const DashboardHeadline(
+                          color: Colors.white, text: "@jon_d"),
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.settings,
+                            color: Colors.white,
+                            size: 25,
+                          )),
+                    ],
+                  ),
                 ),
                 const Align(
                     alignment: Alignment.center,
