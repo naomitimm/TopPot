@@ -143,12 +143,12 @@ class OptionCard extends StatelessWidget {
   }
 }
 
-class FavoriteCard extends StatelessWidget {
+class CartCard extends StatelessWidget {
   final String image;
   final String price;
   final String name;
 
-  const FavoriteCard(
+  const CartCard(
       {Key? key, required this.image, required this.price, required this.name})
       : super(key: key);
 
@@ -165,7 +165,7 @@ class FavoriteCard extends StatelessWidget {
           color: Colors.white,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               width: 100,
@@ -186,9 +186,33 @@ class FavoriteCard extends StatelessWidget {
               icon: const FaIcon(
                 FontAwesomeIcons.x,
                 color: Colors.black,
-                size: 20,
+                size: 15,
               ),
-            )
+            ),
+            // Column(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+
+            //       ],
+            //     ),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Text("\$$price",
+            //             style: GoogleFonts.montserrat(
+            //               textStyle: const TextStyle(
+            //                   color: Colors.black,
+            //                   fontSize: 15,
+            //                   fontWeight: FontWeight.w500),
+            //             )),
+
+            //       ],
+            //     )
+            //   ],
+            // )
           ],
         ),
       ),

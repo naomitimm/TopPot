@@ -37,15 +37,15 @@ class _CheckoutPageState extends State<CheckoutPage> {
               padding: const EdgeInsets.only(top: 130, left: 14, right: 14),
               child: ListView(
                 children: [
-                  FavoriteCard(
+                  CartCard(
                       image: Coffee.coffees[1].image,
                       price: Coffee.coffees[1].price,
                       name: Coffee.coffees[1].name),
-                  FavoriteCard(
+                  CartCard(
                       image: Coffee.coffees[4].image,
                       price: Coffee.coffees[4].price,
                       name: Coffee.coffees[4].name),
-                  FavoriteCard(
+                  CartCard(
                       image: Coffee.coffees[2].image,
                       price: Coffee.coffees[2].price,
                       name: Coffee.coffees[2].name),
