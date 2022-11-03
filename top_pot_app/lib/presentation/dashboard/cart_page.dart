@@ -21,15 +21,16 @@ class _CheckoutPageState extends State<CheckoutPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const DashboardHeadline(color: Colors.black, text: "Favorites"),
-                IconButton(
-                  onPressed: () {},
-                  icon: const FaIcon(
-                    FontAwesomeIcons.cartShopping,
-                    color: Colors.black,
-                    size: 23,
-                  ),
-                )
+                const DashboardHeadline(
+                    color: Color.fromRGBO(151, 77, 36, 1), text: "My cart"),
+                // IconButton(
+                //   onPressed: () {},
+                //   icon: const FaIcon(
+                //     FontAwesomeIcons.cartShopping,
+                //     color: Color.fromRGBO(151, 77, 36, 1),
+                //     size: 23,
+                //   ),
+                // )
               ],
             ),
             FavoriteCard(

@@ -44,12 +44,12 @@ class _HostPageState extends State<HostPage> {
               label: "Home"),
           BottomNavigationBarItem(
               activeIcon: Icon(
-                Icons.favorite,
+                Icons.shopping_bag,
                 color: Color.fromRGBO(151, 77, 36, 1),
                 size: 28,
               ),
               icon: Icon(
-                Icons.favorite,
+                Icons.shopping_bag,
                 color: Colors.black,
                 size: 28,
               ),

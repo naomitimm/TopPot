@@ -12,6 +12,6 @@ export 'package:top_pot_app/presentation/auth/login_page.dart';
 export 'package:top_pot_app/presentation/auth/landing_page.dart';
 export 'package:top_pot_app/presentation/auth/signup_page.dart';
 export 'package:top_pot_app/presentation/dashboard/host_page.dart';
-export 'package:top_pot_app/presentation/dashboard/favorite_page.dart';
+export 'package:top_pot_app/presentation/dashboard/cart_page.dart';
 export 'package:top_pot_app/presentation/dashboard/home_page.dart';
 export 'package:top_pot_app/presentation/dashboard/profile_page.dart';

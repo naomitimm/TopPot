@@ -83,12 +83,12 @@ class _CoffeeCardState extends State<CoffeeCard> {
                   },
                   icon: isFav
                       ? const Icon(
-                          Icons.favorite,
+                          Icons.shopping_bag,
                           color: Color.fromRGBO(151, 77, 36, 1),
                           size: 25,
                         )
                       : const Icon(
-                          Icons.favorite_border,
+                          Icons.shopping_bag_outlined,
                           color: Color.fromRGBO(151, 77, 36, 1),
                           size: 25,
                         )),
@@ -159,9 +159,9 @@ class FavoriteCard extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 120,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          color: Color.fromRGBO(190, 122, 67, 1),
+          color: Color.fromRGBO(190, 122, 67, 1).withOpacity(0.2),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -211,7 +211,7 @@ class _ItemCounterState extends State<ItemCounter> {
           onPressed: () {},
           icon: const FaIcon(
             FontAwesomeIcons.minus,
-            color: Colors.white,
+            color: Color.fromRGBO(151, 77, 36, 1),
             size: 16,
           ),
         ),
@@ -223,7 +223,7 @@ class _ItemCounterState extends State<ItemCounter> {
           onPressed: () {},
           icon: const FaIcon(
             FontAwesomeIcons.plus,
-            color: Colors.white,
+            color: Color.fromRGBO(151, 77, 36, 1),
             size: 16,
           ),
         )
