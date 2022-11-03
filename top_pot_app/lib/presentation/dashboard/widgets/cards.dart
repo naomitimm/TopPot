@@ -160,8 +160,9 @@ class FavoriteCard extends StatelessWidget {
         width: double.infinity,
         height: 120,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          color: Color.fromRGBO(190, 122, 67, 1).withOpacity(0.2),
+          border: Border.all(color: Colors.black.withOpacity(0.5), width: 0.2),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          color: Colors.white,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -228,6 +229,21 @@ class _ItemCounterState extends State<ItemCounter> {
           ),
         )
       ],
+    );
+  }
+}
+
+class CartOptionsCard extends StatelessWidget {
+  const CartOptionsCard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 50,
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(10))),
     );
   }
 }
