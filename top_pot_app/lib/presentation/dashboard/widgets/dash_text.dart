@@ -20,7 +20,7 @@ class DashboardHeadline extends StatelessWidget {
     return Text(text,
         style: GoogleFonts.montserrat(
           textStyle: TextStyle(
-              color: color, fontSize: 35, fontWeight: FontWeight.w500),
+              color: color, fontSize: 25, fontWeight: FontWeight.w500),
         ));
   }
 }

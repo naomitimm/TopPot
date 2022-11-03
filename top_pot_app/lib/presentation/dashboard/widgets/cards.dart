@@ -270,8 +270,8 @@ class CartOptionsCard extends StatelessWidget {
   }
 }
 
-class CartSubmitContainer extends StatelessWidget {
-  const CartSubmitContainer({Key? key}) : super(key: key);
+class CartSubmitCard extends StatelessWidget {
+  const CartSubmitCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -310,6 +310,67 @@ class CartSubmitContainer extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ProfileCard extends StatelessWidget {
+  const ProfileCard({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          height: 200,
+          width: 300,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.black, width: 0.2),
+              borderRadius: const BorderRadius.all(Radius.circular(20))),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              const CircleAvatar(
+                radius: 50,
+                backgroundColor: Color.fromRGBO(190, 122, 67, 1),
+              ),
+              Text("Jon Doe",
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600),
+                  )),
+              Container(
+                height: 40,
+                width: 160,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  color: Color.fromRGBO(190, 122, 67, 1),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text("Edit Profile",
+                        style: GoogleFonts.montserrat(
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600),
+                        )),
+                    const Icon(
+                      Icons.edit,
+                      color: Colors.white,
+                      size: 18,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

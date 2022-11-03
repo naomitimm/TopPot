@@ -13,6 +13,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
     final size = MediaQuery.of(context).size;
     final height = size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
@@ -48,7 +49,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
             ),
             const Align(
               alignment: Alignment.bottomCenter,
-              child: CartSubmitContainer(),
+              child: CartSubmitCard(),
             )
           ],
         ),
