@@ -165,7 +165,7 @@ class CartCard extends StatelessWidget {
           color: Colors.white,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               width: 100,
