@@ -1,9 +1,3 @@
-import 'package:top_pot_app/domain/models/coffee.dart';
-import 'package:top_pot_app/presentation/dashboard/widgets/buttons.dart';
-import 'package:top_pot_app/presentation/dashboard/widgets/cards.dart';
-import 'package:top_pot_app/presentation/dashboard/widgets/search_bar.dart';
-import 'package:top_pot_app/presentation/dashboard/widgets/text.dart';
-import 'package:top_pot_app/presentation/dashboard/widgets/waves.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class CheckoutPage extends StatefulWidget {
