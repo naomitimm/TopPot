@@ -53,7 +53,7 @@ class _HostPageState extends State<HostPage> {
                 color: Colors.black,
                 size: 28,
               ),
-              label: "Favorite"),
+              label: "Cart"),
           BottomNavigationBarItem(
               activeIcon: FaIcon(
                 FontAwesomeIcons.userLarge,

@@ -240,10 +240,17 @@ class CartOptionsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 50,
+      height: 40,
       decoration: const BoxDecoration(
-          color: Colors.white,
+          color: Color.fromRGBO(99, 52, 32, 1),
           borderRadius: BorderRadius.all(Radius.circular(10))),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          CartChoiceText(text: "Summary"),
+          CartChoiceText(text: "Payment")
+        ],
+      ),
     );
   }
 }

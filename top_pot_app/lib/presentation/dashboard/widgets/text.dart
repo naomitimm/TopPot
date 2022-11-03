@@ -56,3 +56,17 @@ class FavoritesTitle extends StatelessWidget {
         ));
   }
 }
+
+class CartChoiceText extends StatelessWidget {
+  const CartChoiceText({Key? key, required this.text}) : super(key: key);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: GoogleFonts.montserrat(
+          textStyle: const TextStyle(
+              color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),
+        ));
+  }
+}
