@@ -48,7 +48,10 @@ class TopPotPages extends StatelessWidget {
               const MaterialPage(child: LandingPage()),
               if (state is SignupRoute) const MaterialPage(child: SignupPage()),
               if (state is LoginRoute) const MaterialPage(child: LoginPage()),
-              if (state is DashboardRoute) const MaterialPage(child: HostPage())
+              if (state is LandingRoute)
+                const MaterialPage(child: LandingPage()),
+              if (state is DashboardRoute)
+                const MaterialPage(child: HostPage()),
             ],
           ),
         );

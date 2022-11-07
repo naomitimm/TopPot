@@ -20,7 +20,7 @@ class _SignupPageState extends State<SignupPage> {
       children: [
         AuthPageWave(
           navigator: () {
-            // context.go('/');
+            navCubit.toLandingScreen();
           },
         ),
         Padding(

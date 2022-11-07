@@ -14,4 +14,6 @@ class NavigationCubit extends Cubit<NavigationState> {
   void toSignupScreen() => emit(SignupRoute());
   void toDashboardScreen([int tabIndex = 0]) =>
       emit(DashboardRoute(tabIndex: tabIndex));
+
+  void toLandingScreen() => emit(LandingRoute());
 }

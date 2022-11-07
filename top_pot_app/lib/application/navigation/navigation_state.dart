@@ -18,3 +18,5 @@ class DashboardRoute extends NavigationState {
   final int tabIndex;
   DashboardRoute({required this.tabIndex});
 }
+
+class LandingRoute extends NavigationState {}

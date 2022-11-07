@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         AuthPageWave(
           navigator: () {
-            // context.go('/');
+            navCubit.toLandingScreen();
           },
         ),
         Padding(
