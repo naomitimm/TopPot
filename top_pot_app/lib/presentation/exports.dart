@@ -4,6 +4,7 @@ export 'package:top_pot_app/presentation/auth/widgets/waves.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:go_router/go_router.dart';
+export 'package:flutter_bloc/flutter_bloc.dart';
 
 // pages
 

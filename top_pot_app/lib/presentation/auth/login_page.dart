@@ -1,3 +1,4 @@
+import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,12 +13,13 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final navCubit = context.read<NavigationCubit>();
     return Scaffold(
         body: ListView(
       children: [
         AuthPageWave(
           navigator: () {
-            context.go('/');
+            // context.go('/');
           },
         ),
         Padding(
@@ -52,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                   text: "Login",
                   color: Colors.white,
                   navigator: () {
-                    context.go('/host_page');
+                    navCubit.toDashboardScreen();
                   }),
               const SizedBox(
                 height: 20,
@@ -69,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: const Color.fromRGBO(151, 77, 36, 1),
                       text: "Signup",
                       navigator: () {
-                        context.go('/signup_page');
+                        navCubit.toSignupScreen();
                       })
                 ],
               )

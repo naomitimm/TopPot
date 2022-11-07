@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:top_pot_app/application/auth/bloc/signup_bloc.dart';
+import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/infrustructure/auth_repository.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
@@ -20,45 +21,63 @@ class TopPotApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
+            create: (context) => NavigationCubit(),
+          ),
+          BlocProvider(
             create: (context) => SignupBloc(authRepository: authRepository),
             child: const SignupPage(),
           ),
         ],
-        child: TopPotPages(),
+        child: const TopPotPages(),
       ),
     ));
   }
 }
 
 class TopPotPages extends StatelessWidget {
-  TopPotPages({Key? key}) : super(key: key);
+  const TopPotPages({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerDelegate: _routes.routerDelegate,
-      routeInformationParser: _routes.routeInformationParser,
-      routeInformationProvider: _routes.routeInformationProvider,
+    final navCubit = context.read<NavigationCubit>();
+    return BlocBuilder<NavigationCubit, NavigationState>(
+      builder: (context, state) {
+        return MaterialApp(
+          home: Navigator(
+            pages: [
+              const MaterialPage(child: LandingPage()),
+              if (state is SignupRoute) const MaterialPage(child: SignupPage()),
+              if (state is LoginRoute) const MaterialPage(child: LoginPage()),
+              if (state is DashboardRoute) const MaterialPage(child: HostPage())
+            ],
+          ),
+        );
+      },
     );
+    // return MaterialApp.router(
+    //   routerDelegate: _routes.routerDelegate,
+    //   routeInformationParser: _routes.routeInformationParser,
+    //   routeInformationProvider: _routes.routeInformationProvider,
+    // );
   }
 
-  final GoRouter _routes = GoRouter(
-      errorBuilder: (context, state) => ErrorScreen(
-            error: state.error,
-          ),
-      initialLocation: '/',
-      routes: <GoRoute>[
-        // GoRoute(path: '/', builder: ((context, state) => const LandingPage())),
-        GoRoute(path: '/', builder: ((context, state) => const SignupPage())),
-        GoRoute(
-            path: '/login_page',
-            builder: ((context, state) => const LoginPage())),
-        GoRoute(
-            path: '/signup_page',
-            builder: ((context, state) => const SignupPage())),
-        GoRoute(
-            path: '/host_page', builder: ((context, state) => const HostPage()))
-      ]);
+  // final GoRouter _routes = GoRouter(
+  //     errorBuilder: (context, state) => ErrorScreen(
+  //           error: state.error,
+  //         ),
+  //     initialLocation: '/',
+  //     routes: <GoRoute>[
+  //       // GoRoute(path: '/', builder: ((context, state) => const LandingPage())),
+  //       GoRoute(path: '/', builder: ((context, state) => const SignupPage())),
+  //       GoRoute(
+  //           path: '/login_page',
+  //           builder: ((context, state) => const LoginPage())),
+  //       GoRoute(
+  //           path: '/signup_page',
+  //           builder: ((context, state) => const SignupPage())),
+  //       GoRoute(
+  //           path: '/host_page', builder: ((context, state) => const HostPage()))
+  //     ]);
 }
 
 class ErrorScreen extends StatelessWidget {

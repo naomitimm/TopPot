@@ -1,3 +1,4 @@
+import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class SignupPage extends StatefulWidget {
@@ -13,12 +14,13 @@ class _SignupPageState extends State<SignupPage> {
   final nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final navCubit = context.read<NavigationCubit>();
     return Scaffold(
         body: ListView(
       children: [
         AuthPageWave(
           navigator: () {
-            context.go('/');
+            // context.go('/');
           },
         ),
         Padding(
@@ -58,7 +60,7 @@ class _SignupPageState extends State<SignupPage> {
                   text: "Signup",
                   color: Colors.white,
                   navigator: () {
-                    context.go('/host_page');
+                    navCubit.toDashboardScreen();
                   }),
               const SizedBox(
                 height: 20,
@@ -76,7 +78,7 @@ class _SignupPageState extends State<SignupPage> {
                       color: const Color.fromRGBO(151, 77, 36, 1),
                       text: "Login",
                       navigator: () {
-                        context.go('/login_page');
+                        navCubit.toLoginScreen();
                       })
                 ],
               )

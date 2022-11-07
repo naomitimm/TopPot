@@ -1,15 +1,12 @@
+import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
-class LandingPage extends StatefulWidget {
+class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
 
   @override
-  State<LandingPage> createState() => _LandingPageState();
-}
-
-class _LandingPageState extends State<LandingPage> {
-  @override
   Widget build(BuildContext context) {
+    final navCubit = context.read<NavigationCubit>();
     return Scaffold(
       body: ListView(
         children: [
@@ -29,7 +26,7 @@ class _LandingPageState extends State<LandingPage> {
                   text: "New Account",
                   color: Colors.white,
                   navigator: () {
-                    context.go('/signup_page');
+                    navCubit.toSignupScreen();
                   },
                 ),
                 const SizedBox(
@@ -39,7 +36,7 @@ class _LandingPageState extends State<LandingPage> {
                   color: const Color.fromRGBO(151, 77, 36, 1),
                   text: "Login",
                   navigator: () {
-                    context.go('/login_page');
+                    navCubit.toLoginScreen();
                   },
                 ),
               ],
