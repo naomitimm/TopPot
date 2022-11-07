@@ -187,6 +187,7 @@ class CoffeeCard extends StatelessWidget {
                       // });
                     },
                     icon: isFav
+                        // ignore: dead_code
                         ? const Icon(
                             Icons.shopping_bag,
                             color: Color.fromRGBO(151, 77, 36, 1),
@@ -479,6 +480,55 @@ class ProfileCard extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class DetailsOrderSubmitCard extends StatelessWidget {
+  const DetailsOrderSubmitCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Container(
+          height: 40,
+          width: 140,
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: const Color.fromRGBO(151, 77, 36, 1), width: 0.2),
+            borderRadius: const BorderRadius.all(Radius.circular(15)),
+            color: Colors.white,
+          ),
+          child: Center(
+            child: Text("Add to cart",
+                style: GoogleFonts.montserrat(
+                  textStyle: const TextStyle(
+                      color: Color.fromRGBO(190, 122, 67, 1),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600),
+                )),
+          ),
+        ),
+        Container(
+          height: 40,
+          width: 140,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+            color: Color.fromRGBO(190, 122, 67, 1),
+          ),
+          child: Center(
+            child: Text("Buy now",
+                style: GoogleFonts.montserrat(
+                  textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600),
+                )),
           ),
         ),
       ],

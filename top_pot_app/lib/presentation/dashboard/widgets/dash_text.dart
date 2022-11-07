@@ -70,3 +70,34 @@ class CartChoiceText extends StatelessWidget {
         ));
   }
 }
+
+class DetailsHeadline extends StatelessWidget {
+  final Color color;
+  final String text;
+  const DetailsHeadline({super.key, required this.color, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: GoogleFonts.rancho(
+          textStyle: TextStyle(
+              color: color, fontSize: 50, fontWeight: FontWeight.w500),
+        ));
+  }
+}
+
+class DetailsDescription extends StatelessWidget {
+  final String text;
+  final Color color;
+  const DetailsDescription(
+      {super.key, required this.color, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: GoogleFonts.montserrat(
+          textStyle: TextStyle(
+              color: color, fontSize: 15, fontWeight: FontWeight.w300),
+        ));
+  }
+}
