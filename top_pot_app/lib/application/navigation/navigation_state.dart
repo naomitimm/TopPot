@@ -5,10 +5,7 @@ abstract class NavigationState {}
 
 class NavigationInitial extends NavigationState {}
 
-class CoffeeDetailsRoute extends NavigationState {
-  final Coffee coffee;
-  CoffeeDetailsRoute({required this.coffee});
-}
+class LandingRoute extends NavigationState {}
 
 class LoginRoute extends NavigationState {}
 
@@ -19,4 +16,7 @@ class DashboardRoute extends NavigationState {
   DashboardRoute({required this.tabIndex});
 }
 
-class LandingRoute extends NavigationState {}
+class CoffeeDetailsRoute extends NavigationState {
+  final Coffee coffee;
+  CoffeeDetailsRoute({required this.coffee});
+}

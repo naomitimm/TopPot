@@ -1,3 +1,4 @@
+import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/search_bar.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
@@ -11,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final navCubit = context.read<NavigationCubit>();
     final size = MediaQuery.of(context).size;
     final height = size.height;
     return Scaffold(
@@ -48,6 +50,11 @@ class _HomePageState extends State<HomePage> {
                               image: Coffee.coffees[index].image,
                               name: Coffee.coffees[index].name,
                               price: Coffee.coffees[index].price,
+                              dispatcher: () {
+                                navCubit
+                                    .toCoffeeDetailsPage(Coffee.coffees[index]);
+                              },
+                              coffee: Coffee.coffees[index],
                             );
                           })),
                     ),

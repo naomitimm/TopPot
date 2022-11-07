@@ -1,98 +1,205 @@
+import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
-class CoffeeCard extends StatefulWidget {
+// class CoffeeCard1 extends StatefulWidget {
+//   final String image;
+//   final String name;
+//   final String price;
+//   final void Function() dispatcher;
+//   const CoffeeCard1(
+//       {Key? key,
+//       required this.image,
+//       required this.name,
+//       required this.price,
+//       required this.dispatcher})
+//       : super(key: key);
+
+//   @override
+//   State<CoffeeCard1> createState() => _CoffeeCard1State();
+// }
+
+// class _CoffeeCard1State extends State<CoffeeCard1> {
+//   bool isFav = false;
+//   @override
+//   Widget build(BuildContext context) {
+//     final navCubit = context.read<NavigationCubit>();
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+//       child: GestureDetector(
+//         onTap: () {},
+//         child: Container(
+//           width: 190,
+//           decoration: BoxDecoration(
+//               color: Colors.white,
+//               border: Border.all(
+//                 color: Colors.black,
+//               ),
+//               // image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+//               borderRadius: const BorderRadius.all(Radius.circular(10))),
+//           child: Stack(
+//             children: [
+//               Column(
+//                 children: [
+//                   Padding(
+//                     padding: const EdgeInsets.only(top: 40),
+//                     child: Align(
+//                       alignment: Alignment.topCenter,
+//                       child: Container(
+//                           width: 150,
+//                           height: 145,
+//                           decoration: BoxDecoration(
+//                               image: DecorationImage(
+//                                   image: AssetImage(widget.image),
+//                                   fit: BoxFit.cover),
+//                               borderRadius:
+//                                   const BorderRadius.all(Radius.circular(10)))),
+//                     ),
+//                   ),
+//                   const SizedBox(height: 10),
+//                   Column(
+//                     crossAxisAlignment: CrossAxisAlignment.center,
+//                     children: [
+//                       Text(widget.name,
+//                           style: GoogleFonts.montserrat(
+//                             textStyle: const TextStyle(
+//                                 color: Colors.black,
+//                                 fontSize: 18,
+//                                 fontWeight: FontWeight.w700),
+//                           )),
+//                       const SizedBox(height: 5),
+//                       Text("\$${widget.price}",
+//                           style: GoogleFonts.montserrat(
+//                             textStyle: const TextStyle(
+//                                 color: Color.fromRGBO(190, 122, 67, 1),
+//                                 fontSize: 16,
+//                                 fontWeight: FontWeight.w600),
+//                           )),
+//                     ],
+//                   ),
+//                 ],
+//               ),
+//               Align(
+//                 alignment: Alignment.topRight,
+//                 child: IconButton(
+//                     onPressed: () {
+//                       setState(() {
+//                         isFav = !isFav;
+//                       });
+//                     },
+//                     icon: isFav
+//                         ? const Icon(
+//                             Icons.shopping_bag,
+//                             color: Color.fromRGBO(151, 77, 36, 1),
+//                             size: 25,
+//                           )
+//                         : const Icon(
+//                             Icons.shopping_bag_outlined,
+//                             color: Color.fromRGBO(151, 77, 36, 1),
+//                             size: 25,
+//                           )),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+class CoffeeCard extends StatelessWidget {
   final String image;
   final String name;
   final String price;
-  const CoffeeCard({
-    Key? key,
-    required this.image,
-    required this.name,
-    required this.price,
-  }) : super(key: key);
+  final void Function() dispatcher;
+  final Coffee coffee;
+  const CoffeeCard(
+      {super.key,
+      required this.image,
+      required this.name,
+      required this.price,
+      required this.dispatcher,
+      required this.coffee});
 
-  @override
-  State<CoffeeCard> createState() => _CoffeeCardState();
-}
-
-class _CoffeeCardState extends State<CoffeeCard> {
-  bool isFav = false;
   @override
   Widget build(BuildContext context) {
+    bool isFav = false;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-      child: Container(
-        width: 190,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(
-              color: Colors.black,
-            ),
-            // image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
-            borderRadius: const BorderRadius.all(Radius.circular(10))),
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 40),
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                        width: 150,
-                        height: 145,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(widget.image),
-                                fit: BoxFit.cover),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(10)))),
+      child: GestureDetector(
+        onTap: dispatcher,
+        child: Container(
+          width: 190,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: Colors.black,
+              ),
+              // image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+              borderRadius: const BorderRadius.all(Radius.circular(10))),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                          width: 150,
+                          height: 145,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(coffee.image),
+                                  fit: BoxFit.cover),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(10)))),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(widget.name,
-                        style: GoogleFonts.montserrat(
-                          textStyle: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700),
-                        )),
-                    const SizedBox(height: 5),
-                    Text("\$${widget.price}",
-                        style: GoogleFonts.montserrat(
-                          textStyle: const TextStyle(
-                              color: Color.fromRGBO(190, 122, 67, 1),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600),
-                        )),
-                  ],
-                ),
-              ],
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isFav = !isFav;
-                    });
-                  },
-                  icon: isFav
-                      ? const Icon(
-                          Icons.shopping_bag,
-                          color: Color.fromRGBO(151, 77, 36, 1),
-                          size: 25,
-                        )
-                      : const Icon(
-                          Icons.shopping_bag_outlined,
-                          color: Color.fromRGBO(151, 77, 36, 1),
-                          size: 25,
-                        )),
-            ),
-          ],
+                  const SizedBox(height: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(coffee.name,
+                          style: GoogleFonts.montserrat(
+                            textStyle: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700),
+                          )),
+                      const SizedBox(height: 5),
+                      Text("\$${coffee.price}",
+                          style: GoogleFonts.montserrat(
+                            textStyle: const TextStyle(
+                                color: Color.fromRGBO(190, 122, 67, 1),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          )),
+                    ],
+                  ),
+                ],
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                    onPressed: () {
+                      // setState(() {
+                      //   isFav = !isFav;
+                      // });
+                    },
+                    icon: isFav
+                        ? const Icon(
+                            Icons.shopping_bag,
+                            color: Color.fromRGBO(151, 77, 36, 1),
+                            size: 25,
+                          )
+                        : const Icon(
+                            Icons.shopping_bag_outlined,
+                            color: Color.fromRGBO(151, 77, 36, 1),
+                            size: 25,
+                          )),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:top_pot_app/application/auth/bloc/signup_bloc.dart';
 import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/infrustructure/auth_repository.dart';
+import 'package:top_pot_app/presentation/dashboard/coffee_details_page.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 void main() {
@@ -45,14 +46,21 @@ class TopPotPages extends StatelessWidget {
         return MaterialApp(
           home: Navigator(
             pages: [
-              const MaterialPage(child: LandingPage()),
+              // const MaterialPage(child: LandingPage()),
+              const MaterialPage(child: HostPage()),
               if (state is SignupRoute) const MaterialPage(child: SignupPage()),
               if (state is LoginRoute) const MaterialPage(child: LoginPage()),
               if (state is LandingRoute)
                 const MaterialPage(child: LandingPage()),
               if (state is DashboardRoute)
                 const MaterialPage(child: HostPage()),
+              if (state is CoffeeDetailsRoute)
+                MaterialPage(
+                    child: CoffeeDetailsPage(
+                  coffee: state.coffee,
+                ))
             ],
+            onPopPage: (route, result) => route.didPop(result),
           ),
         );
       },

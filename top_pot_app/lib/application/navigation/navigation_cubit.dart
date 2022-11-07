@@ -7,13 +7,12 @@ part 'navigation_state.dart';
 class NavigationCubit extends Cubit<NavigationState> {
   NavigationCubit() : super(NavigationInitial());
 
-  void toCoffeeDetailsPage(Coffee coffee) =>
-      emit(CoffeeDetailsRoute(coffee: coffee));
-
   void toLoginScreen() => emit(LoginRoute());
   void toSignupScreen() => emit(SignupRoute());
+  void toLandingScreen() => emit(LandingRoute());
   void toDashboardScreen([int tabIndex = 0]) =>
       emit(DashboardRoute(tabIndex: tabIndex));
 
-  void toLandingScreen() => emit(LandingRoute());
+  void toCoffeeDetailsPage(Coffee coffee) =>
+      emit(CoffeeDetailsRoute(coffee: coffee));
 }
