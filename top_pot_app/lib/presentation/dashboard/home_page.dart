@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                             return CoffeeCard(
                               image: Coffee.coffees[index].image,
                               name: Coffee.coffees[index].name,
-                              price: Coffee.coffees[index].price,
+                              price: Coffee.coffees[index].price.toString(),
                               dispatcher: () {
                                 navCubit
                                     .toCoffeeDetailsPage(Coffee.coffees[index]);

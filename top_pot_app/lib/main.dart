@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:top_pot_app/application/auth/bloc/signup_bloc.dart';
 import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
+import 'package:top_pot_app/application/presentation/cart/cart_bloc.dart';
 import 'package:top_pot_app/infrustructure/auth_repository.dart';
 import 'package:top_pot_app/presentation/dashboard/coffee_details_page.dart';
 import 'package:top_pot_app/presentation/exports.dart';
@@ -28,6 +29,9 @@ class TopPotApp extends StatelessWidget {
             create: (context) => SignupBloc(authRepository: authRepository),
             child: const SignupPage(),
           ),
+          BlocProvider(
+            create: (context) => CartBloc()..add(LoadCart()),
+          )
         ],
         child: const TopPotPages(),
       ),

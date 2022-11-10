@@ -34,15 +34,15 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 children: [
                   CartCard(
                       image: Coffee.coffees[1].image,
-                      price: Coffee.coffees[1].price,
+                      price: Coffee.coffees[1].price.toString(),
                       name: Coffee.coffees[1].name),
                   CartCard(
                       image: Coffee.coffees[4].image,
-                      price: Coffee.coffees[4].price,
+                      price: Coffee.coffees[4].price.toString(),
                       name: Coffee.coffees[4].name),
                   CartCard(
                       image: Coffee.coffees[2].image,
-                      price: Coffee.coffees[2].price,
+                      price: Coffee.coffees[2].price.toString(),
                       name: Coffee.coffees[2].name),
                 ],
               ),
