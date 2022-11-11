@@ -21,5 +21,20 @@ class CartLoadingFailed extends CartState {
   CartLoadingFailed({required this.error});
 
   @override
+  List<Object?> get props => [error];
+}
+
+class AddedToCart extends CartState {
+  @override
+  List<Object?> get props => [];
+}
+
+class RemovedFromCart extends CartState {
+  @override
+  List<Object?> get props => [];
+}
+
+class UpdatedCart extends CartState {
+  @override
   List<Object?> get props => [];
 }

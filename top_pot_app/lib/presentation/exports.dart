@@ -15,6 +15,7 @@ export 'package:top_pot_app/presentation/dashboard/host_page.dart';
 export 'package:top_pot_app/presentation/dashboard/cart_page.dart';
 export 'package:top_pot_app/presentation/dashboard/home_page.dart';
 export 'package:top_pot_app/presentation/dashboard/profile_page.dart';
+export 'package:top_pot_app/presentation/dashboard/coffee_details_page.dart';
 
 // widgets
 export 'package:top_pot_app/presentation/auth/widgets/buttons.dart';
@@ -25,3 +26,8 @@ export 'package:top_pot_app/presentation/dashboard/widgets/dash_text.dart';
 
 //models
 export 'package:top_pot_app/domain/models/coffee.dart';
+
+// blocs
+export 'package:top_pot_app/application/presentation/cart/cart_bloc.dart';
+export 'package:top_pot_app/application/auth/bloc/signup_bloc.dart';
+export 'package:top_pot_app/application/navigation/navigation_cubit.dart';

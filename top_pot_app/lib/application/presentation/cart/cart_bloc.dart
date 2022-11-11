@@ -14,7 +14,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     on<UpdateCart>(_handleUpdateCart);
   }
 
-  void _handleLoadCart(LoadCart event, Emitter emit) {
+  void _handleLoadCart(LoadCart event, Emitter emit) async {
+    await Future.delayed(const Duration(seconds: 3));
     try {
       emit(CartLoadingSuccessful(coffees: event.coffees));
     } on Exception catch (error) {
