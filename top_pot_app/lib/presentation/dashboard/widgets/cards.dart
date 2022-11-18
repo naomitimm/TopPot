@@ -1,110 +1,4 @@
-import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
-
-// class CoffeeCard1 extends StatefulWidget {
-//   final String image;
-//   final String name;
-//   final String price;
-//   final void Function() dispatcher;
-//   const CoffeeCard1(
-//       {Key? key,
-//       required this.image,
-//       required this.name,
-//       required this.price,
-//       required this.dispatcher})
-//       : super(key: key);
-
-//   @override
-//   State<CoffeeCard1> createState() => _CoffeeCard1State();
-// }
-
-// class _CoffeeCard1State extends State<CoffeeCard1> {
-//   bool isFav = false;
-//   @override
-//   Widget build(BuildContext context) {
-//     final navCubit = context.read<NavigationCubit>();
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-//       child: GestureDetector(
-//         onTap: () {},
-//         child: Container(
-//           width: 190,
-//           decoration: BoxDecoration(
-//               color: Colors.white,
-//               border: Border.all(
-//                 color: Colors.black,
-//               ),
-//               // image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
-//               borderRadius: const BorderRadius.all(Radius.circular(10))),
-//           child: Stack(
-//             children: [
-//               Column(
-//                 children: [
-//                   Padding(
-//                     padding: const EdgeInsets.only(top: 40),
-//                     child: Align(
-//                       alignment: Alignment.topCenter,
-//                       child: Container(
-//                           width: 150,
-//                           height: 145,
-//                           decoration: BoxDecoration(
-//                               image: DecorationImage(
-//                                   image: AssetImage(widget.image),
-//                                   fit: BoxFit.cover),
-//                               borderRadius:
-//                                   const BorderRadius.all(Radius.circular(10)))),
-//                     ),
-//                   ),
-//                   const SizedBox(height: 10),
-//                   Column(
-//                     crossAxisAlignment: CrossAxisAlignment.center,
-//                     children: [
-//                       Text(widget.name,
-//                           style: GoogleFonts.montserrat(
-//                             textStyle: const TextStyle(
-//                                 color: Colors.black,
-//                                 fontSize: 18,
-//                                 fontWeight: FontWeight.w700),
-//                           )),
-//                       const SizedBox(height: 5),
-//                       Text("\$${widget.price}",
-//                           style: GoogleFonts.montserrat(
-//                             textStyle: const TextStyle(
-//                                 color: Color.fromRGBO(190, 122, 67, 1),
-//                                 fontSize: 16,
-//                                 fontWeight: FontWeight.w600),
-//                           )),
-//                     ],
-//                   ),
-//                 ],
-//               ),
-//               Align(
-//                 alignment: Alignment.topRight,
-//                 child: IconButton(
-//                     onPressed: () {
-//                       setState(() {
-//                         isFav = !isFav;
-//                       });
-//                     },
-//                     icon: isFav
-//                         ? const Icon(
-//                             Icons.shopping_bag,
-//                             color: Color.fromRGBO(151, 77, 36, 1),
-//                             size: 25,
-//                           )
-//                         : const Icon(
-//                             Icons.shopping_bag_outlined,
-//                             color: Color.fromRGBO(151, 77, 36, 1),
-//                             size: 25,
-//                           )),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class CoffeeCard extends StatelessWidget {
   final String image;
@@ -136,7 +30,6 @@ class CoffeeCard extends StatelessWidget {
               border: Border.all(
                 color: Colors.black,
               ),
-              // image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
               borderRadius: const BorderRadius.all(Radius.circular(10))),
           child: Stack(
             children: [
@@ -180,33 +73,43 @@ class CoffeeCard extends StatelessWidget {
                   ),
                 ],
               ),
+              // Align(
+              //   alignment: Alignment.topRight,
+              //   child: BlocConsumer<CartBloc, CartState>(
+              //     listener: (context, state) {},
+              //     builder: (context, state) {
+              //       if (state is CartButtonChange) {
+              //         return IconButton(
+              //           onPressed: () {},
+              //           icon: const Icon(
+              //             Icons.shopping_bag,
+              //             color: Color.fromRGBO(151, 77, 36, 1),
+              //             size: 25,
+              //           ),
+              //         );
+              //       }
+              //       return IconButton(
+              //           onPressed: () {
+              //             tapped();
+              //           },
+              //           icon: const Icon(
+              //             Icons.shopping_bag_outlined,
+              //             color: Color.fromRGBO(151, 77, 36, 1),
+              //             size: 25,
+              //           ));
+              //     },
+              //   ),
+              // ),
               Align(
-                alignment: Alignment.topRight,
-                child: BlocConsumer<CartBloc, CartState>(
-                  listener: (context, state) {},
-                  builder: (context, state) {
-                    if (state is CartButtonChange) {
-                      return IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.shopping_bag,
-                          color: Color.fromRGBO(151, 77, 36, 1),
-                          size: 25,
-                        ),
-                      );
-                    }
-                    return IconButton(
-                        onPressed: () {
-                          tapped();
-                        },
-                        icon: const Icon(
-                          Icons.shopping_bag_outlined,
-                          color: Color.fromRGBO(151, 77, 36, 1),
-                          size: 25,
-                        ));
-                  },
-                ),
-              ),
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.coffee,
+                      color: Color.fromRGBO(151, 77, 36, 1),
+                      size: 25,
+                    ),
+                  )),
             ],
           ),
         ),
