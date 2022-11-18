@@ -294,17 +294,20 @@ class CartCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  width: 100,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          bottomLeft: Radius.circular(10)),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(image),
-                      )),
+                GestureDetector(
+                  onTap: dispatcher,
+                  child: Container(
+                    width: 100,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10)),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(image),
+                        )),
+                  ),
                 ),
                 FavoritesTitle(color: Colors.black, text: name),
                 const ItemCounter(),

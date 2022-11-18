@@ -73,11 +73,11 @@ class CoffeeDetailsPage extends StatelessWidget {
                             icon: const FaIcon(
                               FontAwesomeIcons.minus,
                               color: Colors.white,
-                              size: 26,
+                              size: 20,
                             ),
                           ),
                           Container(
-                            height: 45,
+                            height: 40,
                             width: 90,
                             decoration: const BoxDecoration(
                                 color: Color.fromRGBO(190, 122, 67, 1),
@@ -98,7 +98,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                             icon: const FaIcon(
                               FontAwesomeIcons.plus,
                               color: Colors.white,
-                              size: 26,
+                              size: 20,
                             ),
                           )
                         ],
