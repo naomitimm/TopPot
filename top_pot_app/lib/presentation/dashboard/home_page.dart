@@ -13,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final navCubit = context.read<NavigationCubit>();
+    final cartBloc = context.read<CartBloc>();
     final size = MediaQuery.of(context).size;
     final height = size.height;
     return Scaffold(
@@ -55,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                                     .toCoffeeDetailsPage(Coffee.coffees[index]);
                               },
                               coffee: Coffee.coffees[index],
+                              tapped: () {},
                             );
                           })),
                     ),

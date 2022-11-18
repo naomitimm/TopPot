@@ -1,4 +1,3 @@
-import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class CoffeeDetailsPage extends StatelessWidget {
@@ -35,11 +34,13 @@ class CoffeeDetailsPage extends StatelessWidget {
                 ),
               ),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    navCubit.toDashboardScreen();
+                  },
                   icon: const FaIcon(
                     FontAwesomeIcons.chevronLeft,
                     color: Colors.white,
-                    size: 30,
+                    size: 25,
                   )),
               Padding(
                 padding: EdgeInsets.only(top: (height / 18)),
@@ -53,13 +54,13 @@ class CoffeeDetailsPage extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: height / (5),
+                  height: height / (6),
                   width: double.infinity,
                   decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.6),
                       borderRadius:
                           const BorderRadius.all(Radius.circular(20))),
-                  child: Column(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       MiniHeadline(

@@ -38,3 +38,10 @@ class UpdatedCart extends CartState {
   @override
   List<Object?> get props => [];
 }
+
+class CartButtonChange extends CartState {
+  final Coffee coffee;
+  CartButtonChange({required this.coffee});
+  @override
+  List<Object?> get props => [];
+}

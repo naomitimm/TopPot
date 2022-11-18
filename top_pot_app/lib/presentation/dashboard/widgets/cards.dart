@@ -111,6 +111,7 @@ class CoffeeCard extends StatelessWidget {
   final String name;
   final String price;
   final void Function() dispatcher;
+  final void Function() tapped;
   final Coffee coffee;
   const CoffeeCard(
       {super.key,
@@ -118,7 +119,8 @@ class CoffeeCard extends StatelessWidget {
       required this.name,
       required this.price,
       required this.dispatcher,
-      required this.coffee});
+      required this.coffee,
+      required this.tapped});
 
   @override
   Widget build(BuildContext context) {
@@ -180,24 +182,30 @@ class CoffeeCard extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.topRight,
-                child: IconButton(
-                    onPressed: () {
-                      // setState(() {
-                      //   isFav = !isFav;
-                      // });
-                    },
-                    icon: isFav
-                        // ignore: dead_code
-                        ? const Icon(
-                            Icons.shopping_bag,
-                            color: Color.fromRGBO(151, 77, 36, 1),
-                            size: 25,
-                          )
-                        : const Icon(
-                            Icons.shopping_bag_outlined,
-                            color: Color.fromRGBO(151, 77, 36, 1),
-                            size: 25,
-                          )),
+                child: BlocConsumer<CartBloc, CartState>(
+                  listener: (context, state) {},
+                  builder: (context, state) {
+                    if (state is CartButtonChange) {
+                      return IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.shopping_bag,
+                          color: Color.fromRGBO(151, 77, 36, 1),
+                          size: 25,
+                        ),
+                      );
+                    }
+                    return IconButton(
+                        onPressed: () {
+                          tapped();
+                        },
+                        icon: const Icon(
+                          Icons.shopping_bag_outlined,
+                          color: Color.fromRGBO(151, 77, 36, 1),
+                          size: 25,
+                        ));
+                  },
+                ),
               ),
             ],
           ),
@@ -258,9 +266,14 @@ class CartCard extends StatelessWidget {
   final String image;
   final String price;
   final String name;
+  final void Function() dispatcher;
 
   const CartCard(
-      {Key? key, required this.image, required this.price, required this.name})
+      {Key? key,
+      required this.image,
+      required this.price,
+      required this.name,
+      required this.dispatcher})
       : super(key: key);
 
   @override
