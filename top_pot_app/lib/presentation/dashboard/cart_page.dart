@@ -1,7 +1,9 @@
 import 'package:top_pot_app/presentation/exports.dart';
 
 class CheckoutPage extends StatefulWidget {
-  const CheckoutPage({Key? key}) : super(key: key);
+  const CheckoutPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<CheckoutPage> createState() => _CheckoutPageState();
@@ -41,12 +43,12 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 130, left: 14, right: 14),
                   child: ListView.builder(
-                    itemCount: 3,
+                    itemCount: state.coffees.length,
                     itemBuilder: (context, index) {
                       return CartCard(
-                        image: Coffee.coffees[index].image,
-                        price: Coffee.coffees[index].price.toString(),
-                        name: Coffee.coffees[index].name,
+                        image: state.coffees[index].image,
+                        price: state.coffees[index].price.toString(),
+                        name: state.coffees[index].name,
                         dispatcher: () {
                           navCubit.toCoffeeDetailsPage(Coffee.coffees[index]);
                         },

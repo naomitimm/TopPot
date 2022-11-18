@@ -407,30 +407,34 @@ class ProfileCard extends StatelessWidget {
 }
 
 class DetailsOrderSubmitCard extends StatelessWidget {
-  const DetailsOrderSubmitCard({super.key});
+  final void Function() dispatcher;
+  const DetailsOrderSubmitCard({super.key, required this.dispatcher});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Container(
-          height: 40,
-          width: 140,
-          decoration: BoxDecoration(
-            border: Border.all(
-                color: const Color.fromRGBO(151, 77, 36, 1), width: 0.2),
-            borderRadius: const BorderRadius.all(Radius.circular(15)),
-            color: Colors.white,
-          ),
-          child: Center(
-            child: Text("Add to cart",
-                style: GoogleFonts.montserrat(
-                  textStyle: const TextStyle(
-                      color: Color.fromRGBO(190, 122, 67, 1),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600),
-                )),
+        GestureDetector(
+          onTap: dispatcher,
+          child: Container(
+            height: 40,
+            width: 140,
+            decoration: BoxDecoration(
+              border: Border.all(
+                  color: const Color.fromRGBO(151, 77, 36, 1), width: 0.2),
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
+              color: Colors.white,
+            ),
+            child: Center(
+              child: Text("Add to cart",
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                        color: Color.fromRGBO(190, 122, 67, 1),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600),
+                  )),
+            ),
           ),
         ),
         Container(

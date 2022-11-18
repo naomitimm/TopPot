@@ -123,9 +123,24 @@ class CoffeeDetailsPage extends StatelessWidget {
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 20),
-            child: DetailsOrderSubmitCard(),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: BlocConsumer<CartBloc, CartState>(
+              listener: (context, state) {
+                if (state is CartLoadingSuccessful) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Added to cart")),
+                  );
+                }
+              },
+              builder: (context, state) {
+                return DetailsOrderSubmitCard(
+                  dispatcher: () {
+                    context.read<CartBloc>().add(AddToCart(coffee: coffee));
+                  },
+                );
+              },
+            ),
           )
         ],
       ),
