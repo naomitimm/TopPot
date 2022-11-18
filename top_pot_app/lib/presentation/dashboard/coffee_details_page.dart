@@ -129,7 +129,11 @@ class CoffeeDetailsPage extends StatelessWidget {
                 BlocListener<CartBloc, CartState>(listener: (context, state) {
               if (state is CartLoadingSuccessful) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Added to cart")),
+                  SnackBar(
+                    content: const Text("Added to cart"),
+                    backgroundColor:
+                        const Color.fromRGBO(190, 122, 67, 1).withOpacity(0.5),
+                  ),
                 );
               }
             }, child: DetailsOrderSubmitCard(

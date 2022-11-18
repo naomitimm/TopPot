@@ -49,8 +49,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         listener: (context, state) {
                           if (state is CartLoadingSuccessful) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text("Removed from cart")),
+                              SnackBar(
+                                  backgroundColor:
+                                      const Color.fromRGBO(151, 77, 36, 1)
+                                          .withOpacity(0.5),
+                                  content: const Text("Removed from cart")),
                             );
                           }
                         },
