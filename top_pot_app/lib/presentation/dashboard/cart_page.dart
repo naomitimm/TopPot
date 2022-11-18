@@ -45,13 +45,27 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   child: ListView.builder(
                     itemCount: state.coffees.length,
                     itemBuilder: (context, index) {
-                      return CartCard(
-                        image: state.coffees[index].image,
-                        price: state.coffees[index].price.toString(),
-                        name: state.coffees[index].name,
-                        dispatcher: () {
-                          navCubit.toCoffeeDetailsPage(Coffee.coffees[index]);
+                      return BlocListener<CartBloc, CartState>(
+                        listener: (context, state) {
+                          if (state is CartLoadingSuccessful) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text("Removed from cart")),
+                            );
+                          }
                         },
+                        child: CartCard(
+                          image: state.coffees[index].image,
+                          price: state.coffees[index].price.toString(),
+                          name: state.coffees[index].name,
+                          navigator: () {
+                            navCubit.toCoffeeDetailsPage(Coffee.coffees[index]);
+                          },
+                          dispatcher: () {
+                            context.read<CartBloc>().add(
+                                RemoveFromCart(coffee: state.coffees[index]));
+                          },
+                        ),
                       );
                     },
                   ),

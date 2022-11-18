@@ -169,6 +169,7 @@ class CartCard extends StatelessWidget {
   final String image;
   final String price;
   final String name;
+  final void Function() navigator;
   final void Function() dispatcher;
 
   const CartCard(
@@ -176,6 +177,7 @@ class CartCard extends StatelessWidget {
       required this.image,
       required this.price,
       required this.name,
+      required this.navigator,
       required this.dispatcher})
       : super(key: key);
 
@@ -198,7 +200,7 @@ class CartCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
-                  onTap: dispatcher,
+                  onTap: navigator,
                   child: Container(
                     width: 100,
                     height: double.infinity,
@@ -215,7 +217,7 @@ class CartCard extends StatelessWidget {
                 FavoritesTitle(color: Colors.black, text: name),
                 const ItemCounter(),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: dispatcher,
                   icon: const FaIcon(
                     FontAwesomeIcons.x,
                     color: Colors.black,

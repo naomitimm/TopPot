@@ -31,6 +31,15 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 
-  void _handleRemoveFromCart(RemoveFromCart event, Emitter emit) {}
+  void _handleRemoveFromCart(RemoveFromCart event, Emitter emit) {
+    final state = this.state;
+    if (state is CartLoadingSuccessful) {
+      final List<Coffee> coffees = state.coffees.where((coffee) {
+        return coffee.name != event.coffee.name;
+      }).toList();
+      emit(CartLoadingSuccessful(coffees: coffees));
+    }
+  }
+
   void _handleUpdateCart(UpdateCart event, Emitter emit) {}
 }
