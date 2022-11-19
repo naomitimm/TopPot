@@ -244,6 +244,78 @@ class CartCard extends StatelessWidget {
   }
 }
 
+class EmptyCartCard extends StatelessWidget {
+  const EmptyCartCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: BlocBuilder<CartBloc, CartState>(
+        builder: (context, state) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+            child: ListView(
+              children: [
+                Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.coffee,
+                        size: 30,
+                        color: Color.fromRGBO(190, 122, 67, 1),
+                      )),
+                ),
+                const DashboardHeadline(color: Colors.white, text: "My cart"),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 300,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/cover/empty_cart.png'),
+                          fit: BoxFit.cover)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      Text("Your cart is empty.",
+                          style: GoogleFonts.montserrat(
+                            textStyle: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500),
+                          )),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text("Browse our app to pick out coffess you can add.",
+                          style: GoogleFonts.montserrat(
+                            textStyle: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                            ),
+                          )),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      WideBrownButton(dispatcher: () {}, text: "Browse TopPot")
+                    ],
+                  ),
+                )
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
 class ItemCounter extends StatefulWidget {
   const ItemCounter({Key? key}) : super(key: key);
 

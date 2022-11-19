@@ -25,6 +25,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
             );
           }
 
+          if (state is CartLoadingSuccessful && state.coffees.isEmpty) {
+            return EmptyCartCard();
+          }
+
           if (state is CartLoadingSuccessful) {
             return Stack(
               children: [

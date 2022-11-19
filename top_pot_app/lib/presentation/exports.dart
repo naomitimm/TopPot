@@ -31,3 +31,6 @@ export 'package:top_pot_app/domain/models/coffee.dart';
 export 'package:top_pot_app/application/presentation/cart/cart_bloc.dart';
 export 'package:top_pot_app/application/auth/bloc/signup_bloc.dart';
 export 'package:top_pot_app/application/navigation/navigation_cubit.dart';
+
+// repositories
+export 'package:top_pot_app/infrustructure/auth_repository.dart';

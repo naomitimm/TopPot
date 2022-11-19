@@ -1,5 +1,3 @@
-import 'package:top_pot_app/infrustructure/auth_repository.dart';
-
 import 'package:top_pot_app/presentation/exports.dart';
 
 void main() {
@@ -65,30 +63,7 @@ class TopPotPages extends StatelessWidget {
         );
       },
     );
-    // return MaterialApp.router(
-    //   routerDelegate: _routes.routerDelegate,
-    //   routeInformationParser: _routes.routeInformationParser,
-    //   routeInformationProvider: _routes.routeInformationProvider,
-    // );
   }
-
-  // final GoRouter _routes = GoRouter(
-  //     errorBuilder: (context, state) => ErrorScreen(
-  //           error: state.error,
-  //         ),
-  //     initialLocation: '/',
-  //     routes: <GoRoute>[
-  //       // GoRoute(path: '/', builder: ((context, state) => const LandingPage())),
-  //       GoRoute(path: '/', builder: ((context, state) => const SignupPage())),
-  //       GoRoute(
-  //           path: '/login_page',
-  //           builder: ((context, state) => const LoginPage())),
-  //       GoRoute(
-  //           path: '/signup_page',
-  //           builder: ((context, state) => const SignupPage())),
-  //       GoRoute(
-  //           path: '/host_page', builder: ((context, state) => const HostPage()))
-  //     ]);
 }
 
 class ErrorScreen extends StatelessWidget {

@@ -1,4 +1,3 @@
-import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class LandingPage extends StatelessWidget {
