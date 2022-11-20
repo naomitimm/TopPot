@@ -3,7 +3,9 @@ import 'package:top_pot_app/presentation/exports.dart';
 class HostPage extends StatefulWidget {
   const HostPage({
     Key? key,
-  }) : super(key: key);
+  }) : super(
+          key: key,
+        );
 
   @override
   State<HostPage> createState() => _HostPageState();

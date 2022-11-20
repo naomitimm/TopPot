@@ -24,7 +24,7 @@ class LandingPage extends StatelessWidget {
                 ButtonWithArrow(
                   text: "New Account",
                   color: Colors.white,
-                  navigator: () {
+                  dispatcher: () {
                     navCubit.toSignupScreen();
                   },
                 ),

@@ -1,5 +1,7 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 import 'package:top_pot_app/infrustructure/auth_repository.dart';
 
@@ -15,7 +17,7 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
   void _handleSignupRequest(SignupRequested event, Emitter emit) async {
     try {
       emit(SigningUp());
-      await authRepository.signup();
+      await Future.delayed(const Duration(seconds: 2));
       emit(SignupSuccessful());
     } on Exception catch (error) {
       emit(SignupFailed(error: error));

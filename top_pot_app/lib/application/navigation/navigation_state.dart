@@ -13,7 +13,10 @@ class SignupRoute extends NavigationState {}
 
 class DashboardRoute extends NavigationState {
   final int tabIndex;
-  DashboardRoute({required this.tabIndex});
+
+  DashboardRoute({
+    required this.tabIndex,
+  });
 }
 
 class CoffeeDetailsRoute extends NavigationState {

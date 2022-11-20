@@ -41,19 +41,23 @@ class _LoginPageState extends State<LoginPage> {
                 controller: emailController,
                 hintText: "Email",
                 placeholder: "example@email.com",
+                validator: UserFormValidator.validateEmail,
               ),
               const SizedBox(
                 height: 25,
               ),
               PasswordTextField(
-                  controller: passwordController, hintText: "Password"),
+                controller: passwordController,
+                hintText: "Password",
+                validator: UserFormValidator.validatePassword,
+              ),
               const SizedBox(
                 height: 25,
               ),
               ButtonWithArrow(
                   text: "Login",
                   color: Colors.white,
-                  navigator: () {
+                  dispatcher: () {
                     navCubit.toDashboardScreen();
                   }),
               const SizedBox(

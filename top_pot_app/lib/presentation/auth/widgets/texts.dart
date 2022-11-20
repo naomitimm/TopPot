@@ -71,16 +71,17 @@ class LinkText extends StatelessWidget {
 }
 
 class AuthFields extends StatelessWidget {
+  final TextEditingController controller;
+  final String hintText;
+  final String placeholder;
+  final String? Function(String?) validator;
   const AuthFields(
       {Key? key,
       required this.controller,
       required this.hintText,
-      required this.placeholder})
+      required this.placeholder,
+      required this.validator})
       : super(key: key);
-
-  final TextEditingController controller;
-  final String hintText;
-  final String placeholder;
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +98,7 @@ class AuthFields extends StatelessWidget {
         ),
         TextFormField(
           controller: controller,
+          validator: validator,
           decoration: InputDecoration(
             focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -114,16 +116,18 @@ class AuthFields extends StatelessWidget {
 
 // ignore: must_be_immutable
 class PasswordTextField extends StatefulWidget {
+  final TextEditingController controller;
+  final String? Function(String?) validator;
+  final String hintText;
+  bool isVisible;
   PasswordTextField(
       {Key? key,
       required this.controller,
       required this.hintText,
-      this.isVisible = true})
+      this.isVisible = true,
+      required this.validator})
       : super(key: key);
 
-  final TextEditingController controller;
-  final String hintText;
-  bool isVisible;
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
 }
