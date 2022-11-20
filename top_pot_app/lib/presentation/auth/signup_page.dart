@@ -1,4 +1,3 @@
-import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class SignupPage extends StatefulWidget {
@@ -42,26 +41,54 @@ class _SignupPageState extends State<SignupPage> {
                 controller: nameController,
                 hintText: "Username",
                 placeholder: "",
+                validator: UserFormValidator.validateUserName,
               ),
               AuthFields(
                 controller: emailController,
                 hintText: "Email",
                 placeholder: "example@email.com",
+                validator: UserFormValidator.validateEmail,
               ),
               const SizedBox(
                 height: 25,
               ),
               PasswordTextField(
-                  controller: passwordController, hintText: "Password"),
+                controller: passwordController,
+                hintText: "Password",
+                validator: UserFormValidator.validatePassword,
+              ),
               const SizedBox(
                 height: 25,
               ),
-              ButtonWithArrow(
-                  text: "Signup",
-                  color: Colors.white,
-                  navigator: () {
+              BlocConsumer<SignupBloc, SignupState>(
+                listener: (context, state) {
+                  if (state is SignupSuccessful) {
                     navCubit.toDashboardScreen();
-                  }),
+                  }
+                },
+                builder: (context, state) {
+                  if (state is SigningUp) {
+                    return const ButtonLoading(
+                      text: "Signup",
+                      color: Colors.white,
+                    );
+                  }
+                  if (state is SignupFailed) {
+                    return Center(
+                      child: Text(state.error.toString()),
+                    );
+                  }
+                  if (state is SignupInitial) {
+                    return ButtonWithArrow(
+                        text: "Signup",
+                        color: Colors.white,
+                        dispatcher: () {
+                          context.read<SignupBloc>().add(SignupRequested());
+                        });
+                  }
+                  return Container();
+                },
+              ),
               const SizedBox(
                 height: 20,
               ),
