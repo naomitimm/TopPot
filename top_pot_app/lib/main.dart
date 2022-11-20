@@ -24,6 +24,10 @@ class TopPotApp extends StatelessWidget {
             child: const SignupPage(),
           ),
           BlocProvider(
+            create: (context) => LoginBloc(authRepository: authRepository),
+            child: const LoginPage(),
+          ),
+          BlocProvider(
             create: (context) => CartBloc()..add(LoadCart()),
           )
         ],

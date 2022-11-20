@@ -1,4 +1,3 @@
-import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class LoginPage extends StatefulWidget {
@@ -54,12 +53,30 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 25,
               ),
-              ButtonWithArrow(
-                  text: "Login",
-                  color: Colors.white,
-                  dispatcher: () {
+              BlocConsumer<LoginBloc, LoginState>(
+                listener: (context, state) {
+                  if (state is LoginSuccessful) {
                     navCubit.toDashboardScreen();
-                  }),
+                  }
+                },
+                builder: (context, state) {
+                  if (state is Logingin) {
+                    return const ButtonLoading(
+                        text: "Login", color: Colors.white);
+                  }
+                  if (state is LoginFailed) {
+                    return Center(
+                      child: Text(state.error.toString()),
+                    );
+                  }
+                  return ButtonWithArrow(
+                      text: "Login",
+                      color: Colors.white,
+                      dispatcher: () {
+                        context.read<LoginBloc>().add(LoginRequested());
+                      });
+                },
+              ),
               const SizedBox(
                 height: 20,
               ),

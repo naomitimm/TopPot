@@ -64,7 +64,7 @@ class LinkText extends StatelessWidget {
       child: Text(text,
           style: GoogleFonts.montserrat(
             textStyle: TextStyle(
-                color: color, fontSize: 16, fontWeight: FontWeight.w400),
+                color: color, fontSize: 16, fontWeight: FontWeight.w500),
           )),
     );
   }
