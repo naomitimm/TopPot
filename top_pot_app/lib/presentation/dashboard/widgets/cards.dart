@@ -532,3 +532,121 @@ class DetailsOrderSubmitCard extends StatelessWidget {
     );
   }
 }
+
+class CoffeeOptionsCard extends StatelessWidget {
+  final String lable;
+  final Color color;
+  final void Function() dispatcher;
+  const CoffeeOptionsCard(
+      {super.key,
+      required this.color,
+      required this.dispatcher,
+      required this.lable});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Text(
+          lable,
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                color: color, fontSize: 16, fontWeight: FontWeight.w600),
+          ),
+        ),
+        IconButton(
+            onPressed: dispatcher,
+            icon: Icon(
+              Icons.circle_outlined,
+              color: color,
+            ))
+      ],
+    );
+  }
+}
+
+class CoffeeSizeCard extends StatelessWidget {
+  final String lable;
+  final Color color;
+  final void Function() dispatcher;
+  const CoffeeSizeCard(
+      {super.key,
+      required this.lable,
+      required this.color,
+      required this.dispatcher});
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
+    return GestureDetector(
+      onTap: dispatcher,
+      child: Container(
+        height: 40,
+        width: size.width / 4,
+        color: Colors.white,
+        child: Center(
+            child: Text(
+          lable,
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+                color: color, fontSize: 16, fontWeight: FontWeight.w600),
+          ),
+        )),
+      ),
+    );
+  }
+}
+
+class CoffeeCountCard extends StatelessWidget {
+  final String price;
+  const CoffeeCountCard({super.key, required this.price});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        MiniHeadline(color: Colors.white, text: price),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.minus,
+                color: Colors.white,
+                size: 20,
+              ),
+            ),
+            Container(
+              height: 40,
+              width: 90,
+              decoration: const BoxDecoration(
+                  color: Color.fromRGBO(190, 122, 67, 1),
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
+              child: const Center(
+                child: Text(
+                  "1",
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
+                ),
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const FaIcon(
+                FontAwesomeIcons.plus,
+                color: Colors.white,
+                size: 20,
+              ),
+            )
+          ],
+        )
+      ],
+    );
+  }
+}
