@@ -42,7 +42,6 @@ class TopPotPages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navCubit = context.read<NavigationCubit>();
     return BlocBuilder<NavigationCubit, NavigationState>(
       builder: (context, state) {
         return MaterialApp(
