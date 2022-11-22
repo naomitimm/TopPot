@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:top_pot_app/presentation/exports.dart';
 
 class CoffeeDetailsPage extends StatelessWidget {

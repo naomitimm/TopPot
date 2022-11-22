@@ -18,7 +18,6 @@ class CoffeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isFav = false;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: GestureDetector(
@@ -376,7 +375,8 @@ class CartOptionsCard extends StatelessWidget {
 }
 
 class CartSubmitCard extends StatelessWidget {
-  const CartSubmitCard({Key? key}) : super(key: key);
+  final String price;
+  const CartSubmitCard({Key? key, required this.price}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -389,7 +389,7 @@ class CartSubmitCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text("Subtotal: \$23",
+          Text("Subtotal: \$$price",
               style: GoogleFonts.montserrat(
                 textStyle: const TextStyle(
                     color: Colors.white,
@@ -533,10 +533,11 @@ class DetailsOrderSubmitCard extends StatelessWidget {
   }
 }
 
-class CoffeeOptionsCard extends StatelessWidget {
+class CoffeeOptionsCard extends StatefulWidget {
   final String lable;
   final Color color;
   final void Function() dispatcher;
+
   const CoffeeOptionsCard(
       {super.key,
       required this.color,
@@ -544,22 +545,27 @@ class CoffeeOptionsCard extends StatelessWidget {
       required this.lable});
 
   @override
+  State<CoffeeOptionsCard> createState() => _CoffeeOptionsCardState();
+}
+
+class _CoffeeOptionsCardState extends State<CoffeeOptionsCard> {
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
-          lable,
+          widget.lable,
           style: GoogleFonts.montserrat(
             textStyle: TextStyle(
-                color: color, fontSize: 16, fontWeight: FontWeight.w600),
+                color: widget.color, fontSize: 16, fontWeight: FontWeight.w600),
           ),
         ),
         IconButton(
-            onPressed: dispatcher,
+            onPressed: widget.dispatcher,
             icon: Icon(
               Icons.circle_outlined,
-              color: color,
+              color: widget.color,
             ))
       ],
     );
@@ -610,7 +616,7 @@ class CoffeeCountCard extends StatelessWidget {
       children: [
         MiniHeadline(color: Colors.white, text: price),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
               onPressed: () {},
@@ -622,7 +628,7 @@ class CoffeeCountCard extends StatelessWidget {
             ),
             Container(
               height: 40,
-              width: 90,
+              width: 50,
               decoration: const BoxDecoration(
                   color: Color.fromRGBO(190, 122, 67, 1),
                   borderRadius: BorderRadius.all(Radius.circular(20))),

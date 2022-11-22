@@ -26,7 +26,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
           }
 
           if (state is CartLoadingSuccessful && state.coffees.isEmpty) {
-            return EmptyCartCard();
+            return const EmptyCartCard();
           }
 
           if (state is CartLoadingSuccessful) {
@@ -61,17 +61,22 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             );
                           }
                         },
-                        child: CartCard(
-                          image: state.coffees[index].image,
-                          price: state.coffees[index].price.toString(),
-                          name: state.coffees[index].name,
-                          navigator: () {
-                            navCubit.toCoffeeDetailsPage(Coffee.coffees[index]);
-                          },
-                          dispatcher: () {
-                            context.read<CartBloc>().add(
-                                RemoveFromCart(coffee: state.coffees[index]));
-                          },
+                        child: Stack(
+                          children: [
+                            CartCard(
+                              image: state.coffees[index].image,
+                              price: state.coffees[index].price.toString(),
+                              name: state.coffees[index].name,
+                              navigator: () {
+                                navCubit
+                                    .toCoffeeDetailsPage(state.coffees[index]);
+                              },
+                              dispatcher: () {
+                                context.read<CartBloc>().add(RemoveFromCart(
+                                    coffee: state.coffees[index]));
+                              },
+                            ),
+                          ],
                         ),
                       );
                     },
@@ -79,7 +84,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 ),
                 const Align(
                   alignment: Alignment.bottomCenter,
-                  child: CartSubmitCard(),
+                  child: CartSubmitCard(
+                    price: "3.45",
+                  ),
                 )
               ],
             );
