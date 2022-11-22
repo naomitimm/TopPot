@@ -1,4 +1,3 @@
-import 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 import 'package:top_pot_app/presentation/dashboard/widgets/search_bar.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
@@ -13,7 +12,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final navCubit = context.read<NavigationCubit>();
-    final cartBloc = context.read<CartBloc>();
     final size = MediaQuery.of(context).size;
     final height = size.height;
     return Scaffold(

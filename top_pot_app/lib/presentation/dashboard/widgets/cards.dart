@@ -561,12 +561,18 @@ class _CoffeeOptionsCardState extends State<CoffeeOptionsCard> {
                 color: widget.color, fontSize: 16, fontWeight: FontWeight.w600),
           ),
         ),
-        IconButton(
-            onPressed: widget.dispatcher,
-            icon: Icon(
-              Icons.circle_outlined,
-              color: widget.color,
-            ))
+        Radio(
+            fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+            value: "radio value",
+            groupValue: "group value",
+            onChanged: (value) {})
+
+        // IconButton(
+        //     onPressed: widget.dispatcher,
+        //     icon: Icon(
+        //       Icons.circle_outlined,
+        //       color: widget.color,
+        //     ))
       ],
     );
   }
