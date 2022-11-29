@@ -97,25 +97,112 @@ class CoffeeDetailsPage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 15, vertical: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              CoffeeSizeCard(
-                                lable: "S",
-                                color: Colors.black,
-                                dispatcher: () {},
-                              ),
-                              CoffeeSizeCard(
-                                lable: "M",
-                                color: Colors.black,
-                                dispatcher: () {},
-                              ),
-                              CoffeeSizeCard(
-                                lable: "L",
-                                color: Colors.black,
-                                dispatcher: () {},
-                              ),
-                            ],
+                          child: BlocConsumer<CoffeeSizeBloc, CoffeeSizeState>(
+                            listener: (context, state) {},
+                            builder: (context, state) {
+                              if (state is SmallCoffeeSelected) {
+                                return Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    CoffeeSizeCard(
+                                      lable: "S",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                    CoffeeSizeCard(
+                                      lable: "M",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                    CoffeeSizeCard(
+                                      lable: "L",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                  ],
+                                );
+                              }
+                              if (state is MediumCoffeeSelected) {
+                                return Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    CoffeeSizeCard(
+                                      lable: "S",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                    CoffeeSizeCard(
+                                      lable: "M",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                    CoffeeSizeCard(
+                                      lable: "L",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                  ],
+                                );
+                              }
+                              if (state is LargeCoffeeSelected) {
+                                return Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    CoffeeSizeCard(
+                                      lable: "S",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                    CoffeeSizeCard(
+                                      lable: "M",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                    CoffeeSizeCard(
+                                      lable: "L",
+                                      color: Colors.black,
+                                      dispatcher: () {},
+                                    ),
+                                  ],
+                                );
+                              }
+                              return Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  CoffeeSizeCard(
+                                    lable: "S",
+                                    color: Colors.black,
+                                    dispatcher: () {
+                                      context
+                                          .read<CoffeeSizeBloc>()
+                                          .add(SelectSmallCoffee());
+                                    },
+                                  ),
+                                  CoffeeSizeCard(
+                                    lable: "M",
+                                    color: Colors.black,
+                                    dispatcher: () {
+                                      context
+                                          .read<CoffeeSizeBloc>()
+                                          .add(SelectMediumCoffee());
+                                    },
+                                  ),
+                                  CoffeeSizeCard(
+                                    lable: "L",
+                                    color: Colors.black,
+                                    dispatcher: () {
+                                      context
+                                          .read<CoffeeSizeBloc>()
+                                          .add(SelectLargeCoffee());
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
                           ),
                         ),
                         Padding(

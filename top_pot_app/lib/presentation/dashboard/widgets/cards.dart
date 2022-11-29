@@ -104,7 +104,7 @@ class CoffeeCard extends StatelessWidget {
                   child: IconButton(
                     onPressed: () {},
                     icon: const Icon(
-                      Icons.coffee,
+                      Icons.shopping_bag_outlined,
                       color: Color.fromRGBO(151, 77, 36, 1),
                       size: 25,
                     ),
@@ -643,7 +643,7 @@ class CoffeeCountCard extends StatelessWidget {
                   "1",
                   style: TextStyle(
                       fontSize: 17,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w800,
                       color: Colors.white),
                 ),
               ),

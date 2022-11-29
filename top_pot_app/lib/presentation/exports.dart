@@ -32,6 +32,7 @@ export 'package:top_pot_app/application/presentation/cart/cart_bloc.dart';
 export 'package:top_pot_app/application/auth/signup/signup_bloc.dart';
 export 'package:top_pot_app/application/navigation/navigation_cubit.dart';
 export 'package:top_pot_app/application/auth/login/login_bloc.dart';
+export 'package:top_pot_app/application/coffee_size/coffee_size_bloc.dart';
 
 // repositories
 export 'package:top_pot_app/infrustructure/auth_repository.dart';

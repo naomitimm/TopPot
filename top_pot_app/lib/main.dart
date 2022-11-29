@@ -29,6 +29,9 @@ class TopPotApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => CartBloc()..add(LoadCart()),
+          ),
+          BlocProvider(
+            create: (context) => CoffeeSizeBloc(),
           )
         ],
         child: const TopPotPages(),
