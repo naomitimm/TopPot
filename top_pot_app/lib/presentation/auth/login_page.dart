@@ -1,3 +1,4 @@
+import 'package:top_pot_app/domain/user/user_model.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class LoginPage extends StatefulWidget {
@@ -59,7 +60,10 @@ class _LoginPageState extends State<LoginPage> {
                 BlocConsumer<LoginBloc, LoginState>(
                   listener: (context, state) {
                     if (state is LoginSuccessful) {
-                      navCubit.toDashboardScreen();
+                      navCubit.toDashboardScreen(User(
+                          name: '',
+                          password: passwordController.text,
+                          userEmail: emailController.text));
                     }
                   },
                   builder: (context, state) {

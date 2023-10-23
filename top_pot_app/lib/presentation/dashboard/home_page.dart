@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   child: Align(
                     alignment: Alignment.center,
                     child: SizedBox(
-                      height: 260,
+                      height: height / 3.5,
                       width: double.infinity,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,

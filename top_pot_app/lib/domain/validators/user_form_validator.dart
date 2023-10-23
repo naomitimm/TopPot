@@ -1,9 +1,9 @@
 class UserFormValidator {
-  static String? validateUserName(String? username) {
-    if (RegExp("[A-Z]").hasMatch(username!)) {
-      return "Upper case letters are not permitted in a user name";
+  static String? validateName(String? name) {
+    if (RegExp("[0-9]").hasMatch(name!)) {
+      return "Numbers are not permitted in a user name";
     }
-    if (username.trim().isEmpty) {
+    if (name.trim().isEmpty) {
       return "User name field can not be blank";
     }
 

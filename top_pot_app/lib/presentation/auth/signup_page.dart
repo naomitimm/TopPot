@@ -1,3 +1,4 @@
+import 'package:top_pot_app/domain/user/user_model.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class SignupPage extends StatefulWidget {
@@ -42,9 +43,9 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 AuthFields(
                   controller: nameController,
-                  hintText: "Username",
+                  hintText: "Full Name",
                   placeholder: "",
-                  validator: UserFormValidator.validateUserName,
+                  validator: UserFormValidator.validateName,
                 ),
                 AuthFields(
                   controller: emailController,
@@ -66,7 +67,10 @@ class _SignupPageState extends State<SignupPage> {
                 BlocConsumer<SignupBloc, SignupState>(
                   listener: (context, state) {
                     if (state is SignupSuccessful) {
-                      navCubit.toDashboardScreen();
+                      navCubit.toDashboardScreen(User(
+                          name: nameController.text,
+                          password: passwordController.text,
+                          userEmail: emailController.text));
                     }
                   },
                   builder: (context, state) {
@@ -86,7 +90,11 @@ class _SignupPageState extends State<SignupPage> {
                         text: "Signup",
                         color: Colors.white,
                         dispatcher: () {
-                          context.read<SignupBloc>().add(SignupRequested());
+                          context.read<SignupBloc>().add(SignupRequested(
+                              user: User(
+                                  name: nameController.text,
+                                  password: passwordController.text,
+                                  userEmail: emailController.text)));
                         },
                         formKey: formKey,
                       );

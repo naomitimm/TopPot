@@ -6,20 +6,21 @@ class AuthPageWave extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Stack(
       children: [
         ClipPath(
           clipper: AuthClipper(),
           child: Container(
             color: const Color.fromRGBO(190, 122, 67, 1),
-            height: 180,
+            height: size.height / 5,
           ),
         ),
         ClipPath(
           clipper: AuthClipper(),
           child: Container(
             color: const Color.fromRGBO(151, 77, 36, 1),
-            height: 170,
+            height: size.height / 5.5,
           ),
         ),
         Positioned(
@@ -85,12 +86,16 @@ class LandingPageWave extends StatelessWidget {
             height: size.height / 1.6,
             width: double.infinity,
           ),
-          const Positioned(
-              top: 90,
-              left: 115,
-              child: Image(image: AssetImage("assets/icons/coffee2.png"))),
-          const Positioned(
-              top: 230, left: 130, child: TopPotHeadline(color: Colors.white))
+          Positioned(
+              top: size.height / 8,
+              left: size.width / 3,
+              right: size.width / 3,
+              child:
+                  const Image(image: AssetImage("assets/icons/coffee2.png"))),
+          Positioned(
+              top: size.height / 3.5,
+              left: size.width / 2.6,
+              child: const TopPotHeadline(color: Colors.white))
         ],
       ),
     );

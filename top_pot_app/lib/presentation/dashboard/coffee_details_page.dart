@@ -1,3 +1,4 @@
+import 'package:top_pot_app/domain/user/user_model.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class CoffeeDetailsPage extends StatelessWidget {
@@ -25,7 +26,10 @@ class CoffeeDetailsPage extends StatelessWidget {
                   color: Colors.black.withOpacity(0.2)),
               IconButton(
                   onPressed: () {
-                    navCubit.toDashboardScreen();
+                    navCubit.toDashboardScreen(User(
+                        name: 'name',
+                        password: 'password',
+                        userEmail: 'userEmail'));
                   },
                   icon: const FaIcon(
                     FontAwesomeIcons.chevronLeft,

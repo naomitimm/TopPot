@@ -1,17 +1,17 @@
+import 'package:top_pot_app/domain/user/user_model.dart';
 import 'package:top_pot_app/presentation/exports.dart';
+import 'package:username_generator/username_generator.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class ProfilePage extends StatelessWidget {
+  final User user;
+  const ProfilePage({Key? key, required this.user}) : super(key: key);
 
-  @override
-  State<ProfilePage> createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final height = size.height;
+    var generator = UsernameGenerator();
+    generator.separator = '_';
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
@@ -28,26 +28,27 @@ class _ProfilePageState extends State<ProfilePage> {
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const DashboardHeadline(
-                          color: Colors.white, text: "@jon_d"),
-                      IconButton(
+                  child: Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: IconButton(
                           onPressed: () {},
                           icon: const Icon(
                             Icons.settings,
                             color: Colors.white,
                             size: 25,
                           )),
-                    ],
+                    ),
                   ),
                 ),
-                const Align(
+                Align(
                     alignment: Alignment.center,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 60),
-                      child: ProfileCard(),
+                      padding: const EdgeInsets.only(top: 60),
+                      child: ProfileCard(
+                        name: user.name,
+                        userName: generator.generate(user.name),
+                      ),
                     ))
               ],
             ),

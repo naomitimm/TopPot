@@ -14,6 +14,9 @@ class SigningUp extends SignupState {
 }
 
 class SignupSuccessful extends SignupState {
+  final User? loggedUser;
+  SignupSuccessful({required this.loggedUser});
+
   @override
   List<Object?> get props => [];
 }

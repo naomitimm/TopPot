@@ -1,9 +1,10 @@
+import 'package:top_pot_app/domain/user/user_model.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 class HostPage extends StatefulWidget {
-  const HostPage({
-    Key? key,
-  }) : super(
+  final User user;
+  const HostPage({Key? key, required this.user})
+      : super(
           key: key,
         );
 
@@ -13,10 +14,23 @@ class HostPage extends StatefulWidget {
 
 class _HostPageState extends State<HostPage> {
   int currentPosition = 0;
-  final pages = [const HomePage(), const CheckoutPage(), const ProfilePage()];
+  late User newUser;
+
+  @override
+  void initState() {
+    newUser = widget.user;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    List pages = [
+      const HomePage(),
+      const CheckoutPage(),
+      ProfilePage(
+        user: newUser,
+      )
+    ];
     return Scaffold(
       body: pages[currentPosition],
       bottomNavigationBar: BottomNavigationBar(

@@ -18,12 +18,13 @@ class CoffeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: GestureDetector(
         onTap: dispatcher,
         child: Container(
-          width: 190,
+          width: size.width / 2.2,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -420,14 +421,17 @@ class CartSubmitCard extends StatelessWidget {
 }
 
 class ProfileCard extends StatelessWidget {
-  const ProfileCard({Key? key}) : super(key: key);
+  final String name;
+  final String userName;
+  const ProfileCard({Key? key, required this.name, required this.userName})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          height: 200,
+          height: 250,
           width: 300,
           decoration: BoxDecoration(
               color: Colors.white,
@@ -440,11 +444,18 @@ class ProfileCard extends StatelessWidget {
                 radius: 50,
                 backgroundColor: Color.fromRGBO(190, 122, 67, 1),
               ),
-              Text("Jon Doe",
+              Text(name,
                   style: GoogleFonts.montserrat(
                     textStyle: const TextStyle(
                         color: Colors.black,
                         fontSize: 18,
+                        fontWeight: FontWeight.w600),
+                  )),
+              Text("@$userName",
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 11,
                         fontWeight: FontWeight.w600),
                   )),
               Container(
