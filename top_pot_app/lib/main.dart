@@ -1,3 +1,4 @@
+import 'package:top_pot_app/application/auth/logout/logout_bloc.dart';
 import 'package:top_pot_app/presentation/exports.dart';
 
 void main() {
@@ -32,7 +33,10 @@ class TopPotApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => CoffeeSizeBloc(),
-          )
+          ),
+          BlocProvider(
+            create: (context) => LogoutBloc(),
+          ),
         ],
         child: const TopPotPages(),
       ),

@@ -122,9 +122,13 @@ class ButtonLoading extends StatelessWidget {
                     color: color, fontSize: 16, fontWeight: FontWeight.w500),
               ),
             ),
-            CircularProgressIndicator(
-              color: color,
-              strokeWidth: 3,
+            SizedBox(
+              height: 25,
+              width: 25,
+              child: CircularProgressIndicator(
+                color: color,
+                strokeWidth: 3,
+              ),
             )
           ],
         ),
